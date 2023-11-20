@@ -1,6 +1,9 @@
 # micro:bit Data Logging
 Data logging with the BBC micro:bit. 
 
+> [!NOTE]
+> THIS REPO IS A WORK IN PROGRESS AND NOT THE FINAL REPO FOR THE PRESENTATION.
+
 ---
 
 ## Useful Links
