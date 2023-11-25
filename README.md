@@ -36,7 +36,11 @@ Data logging with the BBC micro:bit.
 
 #### Step 1: Import the MakeCode Extension
 
+Select the Extensions drawer on the left.
 
+![Extensions Drawer](assets/makecode-extensions-01.png)
+
+Search for 'datalogger' and select the cataloger
 
 ---
 
