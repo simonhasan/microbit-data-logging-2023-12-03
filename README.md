@@ -32,7 +32,7 @@ Data logging with the BBC micro:bit.
 
 ## micro:bit Data Logging with MakeCode
 
-[Waterlavel Sensor with MakeCode](files/waterlevel-makecode.md)
+[Water Level Sensor with MakeCode](files/waterlevel-makecode.md)
 
 ---
 
