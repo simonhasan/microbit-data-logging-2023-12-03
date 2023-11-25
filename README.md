@@ -6,7 +6,15 @@ Data logging with the BBC micro:bit.
 
 ---
 
+
+
+
+
 ## Useful Links
+
+### General Information
+
+[Awesome micro:bit: A curated list of resources for the BBC micro:bit](https://github.com/carlosperate/awesome-microbit)
 
 ### MakeCode
 
@@ -24,15 +32,42 @@ Data logging with the BBC micro:bit.
 
 ## micro:bit Data Logging with MakeCode
 
+### Waterlevel Sensor
+
+#### Step 1: Import the MakeCode Extension
+
 
 
 ---
 
 ## micro:bit Data Logging with MicroPython
 
+### Waterlevel Sensor
+
+#### Step 1: Import the necessary modules.
+
+```python
+from microbit import *
+import log
+from waterlevel import WATERLEVEL as wl
+```
+
+#### Step 2: 
 
 
 
+```python
+from microbit import *
+import log
+from waterlevel import WATERLEVEL as wl
 
+wl_pin = wl(pin1)
+log.set_labels('water_level')
 
+while True:
+    wl_val = wl_pin.get_waterlevel()
+    log.add({'water_level': wl_val})
+    print('Water Level: ' + str(wl_val))
+    sleep(5000)
+```
 
