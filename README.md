@@ -32,15 +32,7 @@ Data logging with the BBC micro:bit.
 
 ## micro:bit Data Logging with MakeCode
 
-### Waterlevel Sensor
-
-#### Step 1: Import the MakeCode Extension
-
-Select the Extensions drawer on the left.
-
-![Extensions Drawer](assets/makecode-extensions-01.png)
-
-Search for 'datalogger' and select the cataloger
+[Waterlavel Sensor with MakeCode](files/waterlevel-makecode.md)
 
 ---
 
