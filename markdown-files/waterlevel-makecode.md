@@ -18,7 +18,7 @@ Connect the water level sensor to pin 1 on the breakout board. The black pin (GN
 
 ---
 
-## Step 2: Import the *datalogger* extension
+## Step 2: Import the Extensions
 
 Select the ***Extensions*** in the Blocks Toolbox.
 
@@ -26,4 +26,25 @@ Select the ***Extensions*** in the Blocks Toolbox.
 
 Search for the ***datalogger*** extension and select it. 
 
-![makecode-extensions-02](assets/makecode-extensions-02.png)
+![Searching for the datalogger extension](assets/makecode-extensions-02.png)
+
+The datalogger blocks are now avalable in the Blocks Toolbox.
+
+![Datalogger extension](assets/makecode-extensions-03.png)
+
+---
+
+## Step 3: Name the Column on the `MY_DATA.HTM` File
+
+Select the `set columns` block.
+
+![Available blocks](assets/makecode-extensions-04.png)
+
+Place the the `set columns` block in the `on start` block.
+
+![Placing set columns block in on start block](assets/name-columns-02.png)
+
+Enter text
+
+![Placing set columns block in on start block](assets/name-columns-03.png)
+
