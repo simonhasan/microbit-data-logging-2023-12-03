@@ -59,5 +59,14 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
 [Octopus Sensor Modules with MycroPython](markdown-files/octopus-micropython.md)
 
+
+
 ---
-## Part 3: Internet of Things (IoT) Dashboards Demonstration
+
+## Part 3: Plotting Sensor Data
+
+Plotting Sensor Data with Excel and Google Sheets
+Plotting Sensor Data with pandas (Python)
+
+---
+## Part 4: Internet of Things (IoT) Dashboards Demonstration
