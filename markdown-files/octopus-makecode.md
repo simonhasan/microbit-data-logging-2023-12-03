@@ -54,7 +54,7 @@ Enter text
 
 |                                                              | Octopus Sensor         | MakeCode Block                                               |
 | ------------------------------------------------------------ | ---------------------- | ------------------------------------------------------------ |
-| <img src="assets/octopus-bme280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor | <img src="assets/octopus-bme280-sensor-makecode.png" alt="octopus-bme280-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-bme280-sensor.png" alt="octopus-bme280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor | <img src="assets/octopus-bme280-sensor-makecode.png" alt="octopus-bme280-sensor-makecode" style="zoom:60%;" /> |
 | <img src="assets/octopus-light-sensor.png" alt="octopus-light-sensor" style="zoom:25%;" /> | Light Sensor           | <img src="assets/octopus-light-sensor-makecode.png" alt="octopus-light-sensor-makecode" style="zoom:60%;" /> |
 | <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor           | <img src="assets/octopus-noise-sensor-makecode.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
 | <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor   | <img src="assets/octopus-soil-moisture-sensor-makecode.png" alt="octopus-soil-moisture-sensor-makecode" style="zoom:60%;" /> |
