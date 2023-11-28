@@ -37,8 +37,17 @@ Data logging with the BBC micro:bit.
 [Documentation for the buttons](https://microbit-micropython.readthedocs.io/en/v2-docs/button.html)
 
 ---
-## ELECFREAKS Octopus Sensor Modules
+
+## Part 1: micro:bit Data Logging with Built-In Sensors
+
+---
+## Part 2: micro:bit Data Logging with ELECFREAKS Octopus Sensor Modules
+
 This presentation will use micro:bit sensor modules. ADD MORE HERE...
+
+### General-Purpose Input/Output (GPIO)
+
+  
 
 ### micro:bit Data Logging with MakeCode
 
@@ -49,3 +58,6 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 ### micro:bit Data Logging with MicroPython
 
 [Octopus Sensor Modules with MycroPython](markdown-files/octopus-micropython.md)
+
+---
+## Part 3: Internet of Things (IoT) Dashboards Demonstration
