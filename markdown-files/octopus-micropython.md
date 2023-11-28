@@ -58,8 +58,6 @@ while True:
     sleep(100)
 ```
 
-
-
 |                                                              | Octopus Sensor       | `from octopus import <enter here>` |                                                              |
 | ------------------------------------------------------------ | -------------------- | ---------------------------------- | ------------------------------------------------------------ |
 | <img src="assets/octopus-BME280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME 280              | `BME20`                            | `BME280(pin1).get_temperature()`<br />`BME280(pin1).get_humidity()`<br />`BME280(pin1).get_altitude()`<br />`BME280(pin1).get_pressure()` |

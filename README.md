@@ -42,10 +42,10 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
 ### micro:bit Data Logging with MakeCode
 
-[Octopus Sensor Modules with MakeCode](files/octopus-makecode.md)
+[Octopus Sensor Modules with MakeCode](markdown-files/octopus-makecode.md)
 
 ---
 
 ### micro:bit Data Logging with MicroPython
 
-[Octopus Sensor Modules with MycroPython](files/octopus-micropython.md)
+[Octopus Sensor Modules with MycroPython](markdown-files/octopus-micropython.md)
