@@ -16,13 +16,21 @@ Data logging with the BBC micro:bit.
 
 [Awesome micro:bit: A curated list of resources for the BBC micro:bit](https://github.com/carlosperate/awesome-microbit)
 
+[pin:out: The comprehensive GPIO pinout website for the BBC micro:bit](https://microbit.pinout.xyz/)
+
+
+
 ### MakeCode
+
+[BBC micro:bit MakeCode Documentation](https://makecode.microbit.org/docs)
 
 [Documentation for the Datalogger extension](https://makecode.microbit.org/reference/datalogger)
 
 [Documentation for the onboard sensors](https://makecode.microbit.org/reference/input)
 
 ### MicroPython
+
+[BBC micro:bit MicroPython Documentation](https://microbit-micropython.readthedocs.io/en/v2-docs/)
 
 [Documentation for Data Logging with MicroPython](https://microbit-micropython.readthedocs.io/en/v2-docs/log.html)
 
