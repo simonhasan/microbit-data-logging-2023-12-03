@@ -23,7 +23,7 @@ Connect the sensor to pin 1 on the breakout board. The black pin (GND) should be
 ```python
 from micro:bit import *
 import log
-from octopus import WATER_LEVEL
+from octopus import LIGHT
 ```
 
 
@@ -40,7 +40,7 @@ log.set_labels('light')
 
 ```python
 while True:
-    log.add({'light': WATER_LEVEL(pin1).get_water_level()})
+    log.add({'light': LIGHT(pin1).get_light()})
     sleep(100)
 ```
 
@@ -49,21 +49,21 @@ while True:
 ```python
 from microbit import *
 import log
-from octopus import WATER_LEVEL
+from octopus import LIGHT
 
 log.set_labels('light')
 
 while True:
-    log.add({'light': WATER_LEVEL(pin1).get_water_level()})
+    log.add({'light': LIGHT(pin1).get_light()})
     sleep(100)
 ```
 
-|                                                              | Octopus Sensor       | `from octopus import <enter here>` |                                                              |
-| ------------------------------------------------------------ | -------------------- | ---------------------------------- | ------------------------------------------------------------ |
-| <img src="assets/octopus-BME280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME 280              | `BME20`                            | `BME280(pin1).get_temperature()`<br />`BME280(pin1).get_humidity()`<br />`BME280(pin1).get_altitude()`<br />`BME280(pin1).get_pressure()` |
-| <img src="assets/octopus-light-sensor.png" alt="octopus-light-sensor" style="zoom:25%;" /> | Light Sensor         | `LIGHT`                            | `LIGHT(pin1).get_light()`                                    |
-| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor         | `NOISE`                            | `NOISE(pin1).get_noise()`                                    |
-| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor | `SOIL_MOISTURE`                    | `SOIL_MOISTURE(pin1).get_soil_moisture()`                    |
-| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor            | `UV`                               | `UV(pin1).get_uv_index()`                                    |
-| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor   | `WATER_LEVEL`                      | `WATER_LEVEL(pin1).get_water_level()`                        |
+|                                                              | Octopus Sensor         | `from octopus import ...` | Method for Sensor                                            |
+| ------------------------------------------------------------ | ---------------------- | ------------------------- | ------------------------------------------------------------ |
+| <img src="assets/octopus-bme280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor | `BME20`                   | `BME280(pin1).get_temperature()`<br />`BME280(pin1).get_humidity()`<br />`BME280(pin1).get_altitude()`<br />`BME280(pin1).get_pressure()` |
+| <img src="assets/octopus-light-sensor.png" alt="octopus-light-sensor" style="zoom:25%;" /> | Light Sensor           | `LIGHT`                   | `LIGHT(pin1).get_light()`                                    |
+| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor           | `NOISE`                   | `NOISE(pin1).get_noise()`                                    |
+| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor   | `SOIL_MOISTURE`           | `SOIL_MOISTURE(pin1).get_soil_moisture()`                    |
+| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor              | `UV`                      | `UV(pin1).get_uv_index()`                                    |
+| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor     | `WATER_LEVEL`             | `WATER_LEVEL(pin1).get_water_level()`                        |
 
