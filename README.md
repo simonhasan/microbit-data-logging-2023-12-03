@@ -37,41 +37,15 @@ Data logging with the BBC micro:bit.
 [Documentation for the buttons](https://microbit-micropython.readthedocs.io/en/v2-docs/button.html)
 
 ---
+## ELECFREAKS Octopus Sensor Modules
+This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
-## micro:bit Data Logging with MakeCode
+### micro:bit Data Logging with MakeCode
 
-[Water Level Sensor with MakeCode](files/waterlevel-makecode.md)
+[Octopus Sensor Modules with MakeCode](files/octopus-makecode.md)
 
 ---
 
-## micro:bit Data Logging with MicroPython
+### micro:bit Data Logging with MicroPython
 
-### Waterlevel Sensor
-
-#### Step 1: Import the necessary modules.
-
-```python
-from microbit import *
-import log
-from waterlevel import WATERLEVEL as wl
-```
-
-#### Step 2: 
-
-
-
-```python
-from microbit import *
-import log
-from waterlevel import WATERLEVEL as wl
-
-wl_pin = wl(pin1)
-log.set_labels('water_level')
-
-while True:
-    wl_val = wl_pin.get_waterlevel()
-    log.add({'water_level': wl_val})
-    print('Water Level: ' + str(wl_val))
-    sleep(5000)
-```
-
+[Octopus Sensor Modules with MycroPython](files/octopus-micropython.md)
