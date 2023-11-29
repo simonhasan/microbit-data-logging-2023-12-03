@@ -6,7 +6,7 @@ log.set_labels('x', 'y', 'z')
 while True:
     log.add({
       'x': accelerometer.get_x(),
-      'y': accelerometer.get_x(),
-      'z': accelerometer.get_x()
+      'y': accelerometer.get_y(),
+      'z': accelerometer.get_z()
     })
-    sleep(100)
+    sleep(1)
