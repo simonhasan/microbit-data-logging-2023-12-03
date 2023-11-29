@@ -1,3 +1,8 @@
+'''
+Modified and unified version of modules from ELECFREAKS
+https://github.com/elecfreaks/Octopus_MicroPython
+'''
+
 from microbit import *
 import time
 import utime
