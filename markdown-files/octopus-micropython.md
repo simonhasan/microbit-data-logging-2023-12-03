@@ -18,7 +18,27 @@ Connect the sensor to pin 1 on the breakout board. The black pin (GND) should be
 
 ### Step 2: Import the Modules
 
+The `log` module is a built-in module. The `octopus` module is an external file that must be uploaded into the [mico:bit Python Editor](https://python.microbit.org/v/3).
 
+#### Downloading `octopus.py`
+
+First, download the octopus module (`octopus.py`) in the GitHub repository [here](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/octopus.py). 
+
+Click on the ![github-download](assets/github-download.png) icon to download the file.
+
+#### Uploading `octopus.py` into the micro:bit Python Editor.
+
+Click on the **Projects** icon.
+
+![python-editor-file-upload-01](assets/python-editor-file-upload-01.png)
+
+Click on the **Open** button.
+
+![python-editor-file-upload-02](assets/python-editor-file-upload-02.png)
+
+> [!NOTE] **Replace main code with ...** is the default. This will replace the code file flashed to the micro:bit.
+
+![python-editor-file-upload-03](assets/python-editor-file-upload-03.png)
 
 ```python
 from micro:bit import *
