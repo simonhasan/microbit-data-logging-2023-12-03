@@ -6,4 +6,4 @@ log.set_labels('light')
 
 while True:
     log.add({'light': LIGHT(pin1).get_light()})
-    sleep(100)
+    sleep(1)

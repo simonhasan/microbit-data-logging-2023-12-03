@@ -61,4 +61,4 @@ Enter text
 | <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor              | <img src="assets/octopus-uv-sensor-makecode.png" alt="octopus-uv-sensor-makecode" style="zoom:60%;" /> |
 | <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor     | <img src="assets/octopus-water-level-sensor-makecode.png" alt="octopus-water-level-sensor-makecode" style="zoom:60%;" /> |
 
-![name-columns-03](/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/name-columns-03.png)
+![name-columns-03](assets/name-columns-03.png)

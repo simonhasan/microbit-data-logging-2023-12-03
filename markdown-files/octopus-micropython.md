@@ -8,9 +8,9 @@ The following example uses the [ELECFREAKS Octopus Light Sensor](https://www.ele
 
 ### Step 1: Connect the Sensor to the Breakout Board
 
-The breakout boards provided for this presentation may differ from the one presented below. The breakout boards from DFRobot have a green pin instead of a yellow pin for the GPIO. Nevertheless, the functionality is the same for this demonstration, as the order is still SVG.
+The breakout boards provided for this presentation may differ from the one presented below. The breakout boards from DFRobot have a green pin instead of a yellow pin for the GPIO. Nevertheless, this demonstration's functionality is the same, as the order is still SVG.
 
-Connect the sensor to pin 1 on the breakout board. The black pin (GND) should be connected to the black wire.
+Connect the sensor to pin1 on the breakout board. The black pin (GND) should be connected to the black wire.
 
 ![micro:bit with Light Sensor](assets/microbit-octopus-light-sensor.png)
 
@@ -22,7 +22,7 @@ The `log` module is a built-in module. The `octopus` module is an external file 
 
 #### Downloading `octopus.py`
 
-First, download the octopus module (`octopus.py`) in the GitHub repository [here](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/octopus.py). 
+First, download the octopus module (`octopus.py`) in the GitHub repository [here](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/octopus.py). This is a collection of several official ELECFREAKS modules combined in one file for convenience.
 
 Click on the ![github-download](assets/github-download.png) icon to download the file.
 
@@ -61,9 +61,11 @@ The file `octopus.py` is now available as a Python module that can be imported.
 
 ![python-editor-file-upload-04](assets/python-editor-file-upload-08.png)
 
-The now works with the code completion feature in the micro:bit Python Editor.
+The file now works with the micro:bit Python Editor code completion feature.
 
 ![python-editor-file-upload-04](assets/python-editor-file-upload-09.png)
+
+---
 
 ### Step 3: Import the Modules
 
@@ -81,29 +83,25 @@ from octopus import LIGHT
 
 ### Step 4: Label the Column on the `MY_DATA.HTM` File
 
+Set the name of the row labels on the log file.
+
 ```python
 log.set_labels('light')
 ```
 
+---
 
+### Step 5: Log the Data
+
+Log the data every millisecond `sleep(1)` in a `while` loop with the `log.add()`  method. 
 
 ```python
 while True:
     log.add({'light': LIGHT(pin1).get_light()})
-    sleep(10)
+    sleep(1)
 ```
 
 Here is the complete code for the Octopus Light Sensor.
-
-> [!NOTE]
->
-> This code has no interupts or exception handling. These topics are beyond the scope of the presentation. This code log data until the memory is full and return the following error:
-
-```
-Traceback (most recent call last):
-  File "main.py", line 9, in <module>
-OSError: [Errno 28] ENOSPC
-```
 
 ```python
 from microbit import *
@@ -114,10 +112,29 @@ log.set_labels('light')
 
 while True:
     log.add({'light': LIGHT(pin1).get_light()})
-    sleep(10)
+    sleep(1)
+```
+> [!NOTE]
+>
+> This code has no interrupts or exception handling. These topics are beyond the scope of the presentation. This code logs data until the memory is full and returns the following error:
+
+```
+Traceback (most recent call last):
+  File "main.py", line 9, in <module>
+OSError: [Errno 28] ENOSPC
 ```
 
-|                                                              | Octopus Sensor         | `from octopus import ...` | Method for Sensor                                            |
+The code runs for approximately 43 seconds and logs over 7500 logs before it fills the memory on the micro:bit.
+
+---
+
+## Other ELECFREAKS Octopus Sensors
+
+Here are the sensors that are available to tinker with in this presentation. The code will be the same above with sensor specific code. For example:
+
+If the Octopus Water Level sensor is chosen use `from octopus import WATER_LEVEL` instead of `from octopus import LIGHT`. The method will be `WATER_LEVEL(pin1).get_water_level` instead of `LIGHT(pin1).get_light()`
+
+|                                                              | Octopus Sensor         | `from octopus import ...` | Method for the Sensor                                        |
 | ------------------------------------------------------------ | ---------------------- | ------------------------- | ------------------------------------------------------------ |
 | <img src="assets/octopus-bme280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor | `BME20`                   | `BME280(pin1).get_temperature()`<br />`BME280(pin1).get_humidity()`<br />`BME280(pin1).get_altitude()`<br />`BME280(pin1).get_pressure()` |
 | <img src="assets/octopus-light-sensor.png" alt="octopus-light-sensor" style="zoom:25%;" /> | Light Sensor           | `LIGHT`                   | `LIGHT(pin1).get_light()`                                    |
