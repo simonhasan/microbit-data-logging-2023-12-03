@@ -36,7 +36,7 @@ Click on the **Open** button.
 
 ![python-editor-file-upload-02](assets/python-editor-file-upload-02.png)
 
-> [!NOTE] **Replace main code with ...** is the default. This will replace the code file flashed to the micro:bit.
+[!NOTE] **Replace main code with ...** is the default. This will replace the code file flashed to the micro:bit.
 
 ![python-editor-file-upload-03](assets/python-editor-file-upload-03.png)
 
