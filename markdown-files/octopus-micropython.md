@@ -16,7 +16,7 @@ Connect the sensor to pin 1 on the breakout board. The black pin (GND) should be
 
 ---
 
-### Step 2: Import the Modules
+### Step 2: Uploading External Modules
 
 The `log` module is a built-in module. The `octopus` module is an external file that must be uploaded into the [mico:bit Python Editor](https://python.microbit.org/v/3).
 
@@ -41,6 +41,34 @@ Click on the **Open** button.
 
 ![python-editor-file-upload-03](assets/python-editor-file-upload-03.png)
 
+Change the way the file is imported with the file settings icon ![file-settings-icon](assets/file-settings-icon.png).
+
+![python-editor-file-upload-04](assets/python-editor-file-upload-04.png)                                                                            
+
+Change the option from **Replace main code with octopus.py** to **Add file octopus.py**.
+
+![python-editor-file-upload-04](assets/python-editor-file-upload-05.png)
+
+The change is reflected in the dialog box.
+
+![python-editor-file-upload-04](assets/python-editor-file-upload-06.png)
+
+Press the **Confirm** button.
+
+![python-editor-file-upload-04](assets/python-editor-file-upload-07.png)
+
+The file `octopus.py` is now available as a Python module that can be imported.
+
+![python-editor-file-upload-04](assets/python-editor-file-upload-08.png)
+
+The now works with the code completion feature in the micro:bit Python Editor.
+
+![python-editor-file-upload-04](assets/python-editor-file-upload-09.png)
+
+### Step 3: Import the Modules
+
+Import the necessary modules with `import log` and `from octopus import LIGHT` as demonstrated below:
+
 ```python
 from micro:bit import *
 import log
@@ -51,7 +79,7 @@ from octopus import LIGHT
 
 ---
 
-### Step 3: Label the Column on the `MY_DATA.HTM` File
+### Step 4: Label the Column on the `MY_DATA.HTM` File
 
 ```python
 log.set_labels('light')
@@ -62,10 +90,20 @@ log.set_labels('light')
 ```python
 while True:
     log.add({'light': LIGHT(pin1).get_light()})
-    sleep(100)
+    sleep(10)
 ```
 
+Here is the complete code for the Octopus Light Sensor.
 
+> [!NOTE]
+>
+> This code has no interupts or exception handling. These topics are beyond the scope of the presentation. This code log data until the memory is full and return the following error:
+
+```
+Traceback (most recent call last):
+  File "main.py", line 9, in <module>
+OSError: [Errno 28] ENOSPC
+```
 
 ```python
 from microbit import *
@@ -76,7 +114,7 @@ log.set_labels('light')
 
 while True:
     log.add({'light': LIGHT(pin1).get_light()})
-    sleep(100)
+    sleep(10)
 ```
 
 |                                                              | Octopus Sensor         | `from octopus import ...` | Method for Sensor                                            |
