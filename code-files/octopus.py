@@ -275,20 +275,28 @@ class Light(object):
     Args:
         pin
     """
-    def __init__(self, pin):
-        self.__pin = pin
-
     def get_light(self):
-        """Read the illuminance
+        """Get light level 0-1023
 
         Returns:
-            illuminance 0-16000 lux
+            analog reading 0-1023
         """
-        __value = self.__pin.read_analog()
-        if __value <= 200:
-            return ((__value - 45) * (1600 - 0)) / (200 - 45) + 0
-        else:
-            return ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
+        return self.__pin.read_analog()
+# Original code is unstable
+#    def __init__(self, pin):
+#        self.__pin = pin
+#
+#    def get_light(self):
+#        """Read the illuminance
+#
+#        Returns:
+#            illuminance 0-16000 lux
+#        """
+#        __value = self.__pin.read_analog()
+#        if __value <= 200:
+#            return ((__value - 45) * (1600 - 0)) / (200 - 45) + 0
+#        else:
+#            return ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
 
 # Octopus Analog Noise Sensor                
 class Noise:
