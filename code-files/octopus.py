@@ -275,11 +275,14 @@ class Light(object):
     Args:
         pin
     """
+    def __init__(self, pin_d):
+        self.__pin = pin_d
+
     def get_light(self):
-        """Get light level 0-1023
+        """Get analog light reading
 
         Returns:
-            analog reading 0-1023
+            analog light reading 0-1023
         """
         return self.__pin.read_analog()
 # Original code is unstable
@@ -395,27 +398,6 @@ class TMP36:
         return temperature
 
 
-# Octopus Potentiometers
-class Trimpot(object):
-    """Octopus Potentiometer
-
-    Args:
-        pin
-
-    Returns:
-        analog reading
-    """
-    def __init__(self, pin_d):
-        self.__pin = pin_d
-
-    def get_analog(self):
-        """Get analog reading
-
-        Returns:
-            analog reading 0-1023
-        """
-        return self.__pin.read_analog()
-
 # Octopus PIR Sensor
 class PIR(object):
     """Octopus Passive Infrared Motion Sensor 
@@ -441,6 +423,27 @@ class PIR(object):
         else:
             return False
 
+# Octopus Potentiometers
+class Trimpot(object):
+    """Octopus Potentiometer
+
+    Args:
+        pin
+
+    Returns:
+        analog reading
+    """
+    def __init__(self, pin_d):
+        self.__pin = pin_d
+
+    def get_analog(self):
+        """Get analog reading
+
+        Returns:
+            analog reading 0-1023
+        """
+        return self.__pin.read_analog()
+    
 # Octopus Analog UV Sensor    
 class UV(object):
     """Ultraviolet sensor
