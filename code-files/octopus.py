@@ -424,7 +424,7 @@ class PIR(object):
             return False
 
 # Octopus Potentiometers
-class Trimpot(object):
+class Potentiometer(object):
     """Octopus Potentiometer
 
     Args:
@@ -454,7 +454,7 @@ class UV(object):
     def __init__(self, pin):
         self.__pin = pin
 
-    def get_uv_index(self):
+    def get_uv(self):
         """Read the UV index
  
         Returns:
