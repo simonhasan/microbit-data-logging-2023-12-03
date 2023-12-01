@@ -114,7 +114,6 @@ class BME280():
         self._H = (var2 >> 12) / 1024
         return [self.__T, self.__P, self._H]
 
-    # __get Temperature in Celsius ℃
     def get_temperature(self):
         """
         Read temperature C
@@ -122,7 +121,6 @@ class BME280():
         self.__get()
         return self.__T
 
-    # __get Humidity in %RH
     def get_humidity(self):
         """
         Read humidity %
@@ -130,7 +128,6 @@ class BME280():
         self.__get()
         return self._H
 
-    # __get Pressure in Pa
     def get_pressure(self):
         """
         Read barometric pressure pa
@@ -138,7 +135,6 @@ class BME280():
         self.__get()
         return self.__P
 
-    # Calculating absolute altitude
     def get_altitude(self):
         """
         Read altitude M
@@ -146,14 +142,12 @@ class BME280():
         self.__get()
         return 44330 * (1 - (self.__P / 101325) ** (1 / 5.255))
 
-    # normal mode
     def set_power_on(self):
         """
         The module starts working, monitoring environmental variables in real time
         """
         self.__sr(0xF4, 0x2F)
 
-    # sleep mode
     def set_power_off(self):
         """
         The module sleeps, retains the last detected environment value, and is not refreshed
@@ -163,13 +157,127 @@ class BME280():
 class DataError(Exception):
     pass
 
+# Octopus Button
+class Button(object):
+    """Button
+
+    Args:
+        pin
+
+    """
+
+    def __init__(self, pin):
+        self.__pin = pin
+        self.__pin.set_pull(self.__pin.PULL_UP)
+
+    def get_presses(self) -> bool:
+        """Get presses
+
+        Returns:
+            bool
+        """
+        if self.__pin.read_digital() == 1:
+            return True
+        else:
+            return False
+
+class CRASH(object):
+    """Crash sensor
+
+    Args:
+        pin
+    """
+
+    def __init__(self, pin):
+        self.__pin = pin
+        self.__pin.set_pull(self.__pin.PULL_UP)
+
+    def get_presses(self) -> bool:
+        """Get presses
+
+        Returns:
+            bool
+        """
+        if self.__pin.read_digital() == 0:
+            return True
+        else:
+            return False
+class DHT11:
+    '''DHT11 temperature and humidity sensor
+
+    Args:
+        pin 
+    '''
+    def __init__(self, pin):
+        self.pin = pin
+        self.temperature = 0
+        self.humidity = 0
+        self.error = False
+    
+    def read(self):
+        self.pin.write_digital(0)
+        sleep(18)
+        self.pin.write_digital(1)
+        sleep(1)
+        self.pin.set_pull(self.pin.PULL_UP)
+        
+        if self.pin.read_digital() == 0:
+            while self.pin.read_digital() == 0:
+                pass
+            while self.pin.read_digital() == 1:
+                pass
+            
+            data = 0
+            for i in range(40):
+                while self.pin.read_digital() == 0:
+                    pass
+                t = running_time()
+                while self.pin.read_digital() == 1:
+                    pass
+                if running_time() - t > 28:
+                    data = (data << 1) | 1
+                else:
+                    data = (data << 1)
+            
+            humidity = data >> 24
+            temperature = (data >> 8) & 0xFFFF
+            checksum = data & 0xFF
+            
+            if checksum == (humidity + temperature) & 0xFF:
+                self.temperature = temperature
+                self.humidity = humidity
+                self.error = False
+            else:
+                self.error = True
+        else:
+            self.error = True
+    
+    @read
+    def get_temperature(self):
+        '''Get the temperature
+
+        Returns:
+            temperature
+        '''
+        return self.temperature
+    
+    # Return the humidity in percentage
+    @read
+    def get_humidity(self):
+        '''Get the humidity
+
+        Returns:
+            humidity
+        '''
+        return self.humidity
+
 # Octopus Sonor:bit
-class DISTANCE(object):
+class Distance(object):
     """HC_SR04 ultrasonic sensor
 
     Args:
-        pin_trig (pin): Trig pin
-        pin_echo (pin): Echo pin   
+        Trig pin
+        Echo pin   
     """
 
     def __init__(self, pin_d):
@@ -198,7 +306,7 @@ class DISTANCE(object):
             return distance / 254
 
 # Octopus Dust Sensor
-class DUST(object):
+class Dust(object):
     """Dust sensor
 
     Args:
@@ -229,7 +337,7 @@ class DUST(object):
         return __dust
 
 # Octopus Light Sensor
-class LIGHT(object):
+class Light(object):
     """Ambient light sensor
 
     Args:
@@ -251,7 +359,7 @@ class LIGHT(object):
             return ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
 
 # Octopus Analog Noise Sensor                
-class NOISE:
+class Noise:
     """Sound sensor
 
     Args:
@@ -309,7 +417,7 @@ class NOISE:
         return sound
 
 # Octopus Soil Moisture Sensor   
-class SOIL_MOISTURE(object):
+class SoilMoisture(object):
     """Soil moisture sensor
 
     Args:
@@ -329,7 +437,69 @@ class SOIL_MOISTURE(object):
         return 100-value
 
 # Octopus TMP36 Temperature Sensor
+class TMP36:
+    def __init__(self, pin):
+        self.pin = pin
+    
+    def get_temperature(self):
+        # Read the analog value from the pin
+        value = self.pin.read_analog()
+        
+        # Convert the analog value to voltage
+        voltage = value * 3.3 / 1023
+        
+        # Convert the voltage to temperature
+        temperature = (voltage - 0.5) * 100
+        
+        # Return the temperature
+        return temperature
 
+
+# Octopus Potentiometers
+class Trimpot(object):
+    """Octopus Potentiometer
+
+    Args:
+        pin
+
+    Returns:
+        analog reading
+    """
+    def __init__(self, pin_d):
+        self.__pin = pin_d
+
+    def get_analog(self):
+        """Get analog reading
+
+        Returns:
+            analog reading 0-1023
+        """
+        return self.__pin.read_analog()
+
+# Octopus PIR Sensor
+class PIR(object):
+    """Octopus Passive Infrared Motion Sensor 
+
+    Args:
+        pin
+
+    """
+
+    def __init__(self, pin):
+        self.__pin = pin
+
+
+    def get_motion(self) -> bool:
+        """Detect motion
+
+        Returns:
+            boolean: True, False
+
+        """
+        if self.__pin.read_digital():
+            return True
+        else:
+            return False
 
 # Octopus Analog UV Sensor    
 class UV(object):
@@ -352,7 +522,7 @@ class UV(object):
         return value
 
 # Octopus Water Level Sensor    
-class WATER_LEVEL(object):
+class WaterLevel(object):
     """Water level sensor
  
     Args:
@@ -370,42 +540,3 @@ class WATER_LEVEL(object):
         __value = self.__pin.read_analog()
         value = ((__value - 0) * (100 - 0)) / (700 - 0) + 0
         return value
-    
-# Octopus Distance Sensor
-class DISTANCE(object):
-    """HC_SR04 Ultrasonic Sensor
-
-    Args:
-        pin_trig (pin)
-        pin_echo (pin)
-
-    Returns:
-        distance
-    """
-
-    def __init__(self, pin_d):
-        self.__pin_e = pin_d
-        self.__pin_t = pin_d
-
-    def get_distance(self, unit=0):
-        """基本描述
-
-        读取距离值
-
-        Args:
-            unit (number): 检测距离单位 0 厘米 1 英尺
-
-        Returns:
-            distance: 距离
-        """
-        self.__pin_e.read_digital()
-        self.__pin_t.write_digital(1)
-        sleep_us(10)
-        self.__pin_t.write_digital(0)
-        ts = time_pulse_us(self.__pin_e, 1, 25000)
-
-        distance = ts * 9 / 6 / 58
-        if unit == 0:
-            return distance
-        elif unit == 1:
-            return distance / 254
