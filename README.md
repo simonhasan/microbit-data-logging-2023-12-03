@@ -50,6 +50,10 @@ Data logging with the BBC micro:bit.
 
 ## Part 1: micro:bit Data Logging with Built-In Sensors
 
+Built-In Sensor Data Logging with MakeCode
+
+Built-In Sensor Data Logging with MicroPython
+
 ---
 ## Part 2: micro:bit Data Logging with ELECFREAKS Octopus Sensor Modules
 
@@ -59,13 +63,13 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
   
 
-### micro:bit Data Logging with MakeCode
+### Octopus Data Logging with MakeCode
 
 [Octopus Sensor Modules with MakeCode](markdown-files/octopus-makecode.md)
 
 ---
 
-### micro:bit Data Logging with MicroPython
+### Octopus Data Logging with MicroPython
 
 [Octopus Sensor Modules with MycroPython](markdown-files/octopus-micropython.md)
 
@@ -75,7 +79,9 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
 ## Part 3: Plotting Sensor Data
 
-Plotting Sensor Data with Excel and Google Sheets
+Plotting Sensor Data with Excel
+
+Plotting Sensor Data with Google Sheets
 
 [Plotting Sensor Data with `pandas` and `matplotlib` (Python)](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/python_plotting.ipynb)
 
