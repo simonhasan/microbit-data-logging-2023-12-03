@@ -251,7 +251,7 @@ class LIGHT(object):
             return ((__value - 200) * (14000 - 1600)) / (1023 - 200) + 1600
 
 # Octopus Analog Noise Sensor                
-class SOUND:
+class NOISE:
     """Sound sensor
 
     Args:
@@ -260,7 +260,7 @@ class SOUND:
     def __init__(self, pin):
         self.pin = pin
 
-    def get_sound(self):
+    def get_noise(self):
         """Read the decibel level
 
         Returns:
@@ -370,3 +370,42 @@ class WATER_LEVEL(object):
         __value = self.__pin.read_analog()
         value = ((__value - 0) * (100 - 0)) / (700 - 0) + 0
         return value
+    
+# Octopus Distance Sensor
+class DISTANCE(object):
+    """HC_SR04 Ultrasonic Sensor
+
+    Args:
+        pin_trig (pin)
+        pin_echo (pin)
+
+    Returns:
+        distance
+    """
+
+    def __init__(self, pin_d):
+        self.__pin_e = pin_d
+        self.__pin_t = pin_d
+
+    def get_distance(self, unit=0):
+        """基本描述
+
+        读取距离值
+
+        Args:
+            unit (number): 检测距离单位 0 厘米 1 英尺
+
+        Returns:
+            distance: 距离
+        """
+        self.__pin_e.read_digital()
+        self.__pin_t.write_digital(1)
+        sleep_us(10)
+        self.__pin_t.write_digital(0)
+        ts = time_pulse_us(self.__pin_e, 1, 25000)
+
+        distance = ts * 9 / 6 / 58
+        if unit == 0:
+            return distance
+        elif unit == 1:
+            return distance / 254
