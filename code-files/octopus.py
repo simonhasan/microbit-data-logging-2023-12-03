@@ -177,9 +177,9 @@ class Button(object):
             bool
         """
         if self.__pin.read_digital() == 1:
-            return True
+            return 1
         else:
-            return False
+            return 0
 
 class CRASH(object):
     """Crash sensor
@@ -199,9 +199,9 @@ class CRASH(object):
             bool
         """
         if self.__pin.read_digital() == 0:
-            return True
+            return 1
         else:
-            return False
+            return 0
 
 # Octopus Sonor:bit
 class Distance(object):
@@ -419,9 +419,9 @@ class PIR(object):
 
         """
         if self.__pin.read_digital():
-            return True
+            return 1
         else:
-            return False
+            return 0
 
 # Octopus Potentiometers
 class Potentiometer(object):
