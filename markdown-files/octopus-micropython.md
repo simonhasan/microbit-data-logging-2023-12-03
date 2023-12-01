@@ -188,12 +188,17 @@ Here are the sensors that are available to tinker with in this presentation. The
 
 If the Octopus Water Level sensor is chosen use `from octopus import WATER_LEVEL` instead of `from octopus import LIGHT`. The method will be `WATER_LEVEL(pin1).get_water_level` instead of `LIGHT(pin1).get_light()`
 
-|                                                              | Octopus Sensor         | `from octopus import ...` | Method for the Sensor                                        |
-| ------------------------------------------------------------ | ---------------------- | ------------------------- | ------------------------------------------------------------ |
-| <img src="assets/octopus-bme280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor | `BME20`                   | `BME280(pin1).get_temperature()`<br />`BME280(pin1).get_humidity()`<br />`BME280(pin1).get_altitude()`<br />`BME280(pin1).get_pressure()` |
-| <img src="assets/octopus-photocell-sensor.png" alt="octopus-photocell-sensor" style="zoom:25%;" /> | Photocell Sensor       | `LIGHT`                   | `LIGHT(pin1).get_light()`                                    |
-| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor           | `NOISE`                   | `NOISE(pin1).get_noise()`                                    |
-| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor   | `SOIL_MOISTURE`           | `SOIL_MOISTURE(pin1).get_soil_moisture()`                    |
-| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor              | `UV`                      | `UV(pin1).get_uv_index()`                                    |
-| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor     | `WATER_LEVEL`             | `WATER_LEVEL(pin1).get_water_level()`                        |
+|                                                              | Octopus Sensor           | `from octopus import ...` | Method for the Sensor                                        |
+| ------------------------------------------------------------ | ------------------------ | ------------------------- | ------------------------------------------------------------ |
+| <img src="assets/octopus-bme280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor   | `BME20`                   | `BME280().get_temperature()`<br />`BME280().get_humidity()`<br />`BME280().get_altitude()`<br />`BME280().get_pressure()`<br />**NOTE: This does not require a pin number.** |
+| <img src="assets/octopus-button.png" alt="octopus-button" style="zoom:25%;" /> | Button                   |                           |                                                              |
+| <img src="assets/octopus-crash-sensor.png" alt="octopus-crash-sensor" style="zoom:25%;" /> | Crash Sensor             |                           |                                                              |
+| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor             | `Noise`                   | `noise = Noise(pin1)`<br /><br />`noise.get_noise()`         |
+| <img src="assets/octopus-pir-motion-sensor.png" alt="octopus-pir-motion-sensor" style="zoom:25%;" /> | PIR Motion Sensor        | PIR                       |                                                              |
+| <img src="assets/octopus-photocell-sensor.png" alt="octopus-photocell-sensor" style="zoom:25%;" /> | Photocell Sensor         | `Light`                   | `light = Light(pin1)`<br /><br />`light.get_light()`         |
+| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor     | `SoilMoisture`            | `sm = SoilMoisture(pin1)`<br /><br />`sm.get_soil_moisture()` |
+| <img src="assets/octopus-tmp36.png" alt="octopus-tmp36" style="zoom:25%;" /> | TMP36 Temperature Sensor |                           |                                                              |
+| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor                | `UV`                      | `uv = UV(pin1)`<br /><br />`uv.get_UV()`                     |
+| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor       | `WaterLevel`              | `wl = WaterLevel(pin1)`<br /><br />`wl.get_water_level()`    |
+|                                                              |                          |                           |                                                              |
 
