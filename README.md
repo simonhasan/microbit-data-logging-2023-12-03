@@ -77,7 +77,7 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
 Plotting Sensor Data with Excel and Google Sheets
 
-[Plotting Sensor Data with `pandas` and `matplotlib` (Python)](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/python_plottinhg.ipynb)
+[Plotting Sensor Data with `pandas` and `matplotlib` (Python)](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/python_plotting.ipynb)
 
 
 
