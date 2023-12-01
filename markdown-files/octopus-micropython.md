@@ -143,6 +143,6 @@ If the Octopus Water Level sensor is chosen use `from octopus import WATER_LEVEL
 | <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor              | `UV`                      | `UV(pin1).get_uv_index()`                                    |
 | <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor     | `WATER_LEVEL`             | `WATER_LEVEL(pin1).get_water_level()`                        |
 
-<div style="position:relative;height:calc(300px + 5em);width:100%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/---codeembed#pub:S89999-13858-88027-85367" allowfullscreen="allowfullscreen" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe></div>
+
 
 Is the MakeCode visible above?
