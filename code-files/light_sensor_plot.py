@@ -1,15 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov 28 19:19:04 2023
-
-@author: simon
-"""
-
+# Imort the pandas library
 import pandas as pd
 
-
+# Read the data from the CSV file
 light_df = pd.read_csv('data/light.csv', index_col=0)
 
-
+# Plot the data
 light_plot = light_df.plot(title='Light Sensor Data')

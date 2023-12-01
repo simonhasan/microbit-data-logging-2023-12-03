@@ -1,15 +1,9 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 29 00:10:37 2023
-
-@author: simon
-"""
-
+# Import the accelerometer data and plot it
+# Import the pandas library
 import pandas as pd
 
-
+# Read the data from the CSV file
 accelerometer_df = pd.read_csv('data/accelerometer.csv', index_col=0)
 
-
+# Plot the data
 accelerometer_plot = accelerometer_df.plot(title='Accelerometer Data')
