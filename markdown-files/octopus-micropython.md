@@ -1,8 +1,8 @@
 # Octopus Sensor Modules with MicroPython
 
-The following example uses the [ELECFREAKS Octopus Light Sensor](https://www.elecfreaks.com/octopus-water-level-sensor.html) displayed below:
+The following example uses the [ELECFREAKS Octopus Photocell Sensor](https://www.elecfreaks.com/octopus-water-level-sensor.html) displayed below:
 
-![octopus-light-sensor](assets/octopus-light-sensor.png)
+![octopus-light-sensor](assets/octopus-photocell-sensor.png)
 
 ## Example: Octopus Light Sensor
 
@@ -77,42 +77,96 @@ import log
 from octopus import LIGHT
 ```
 
+---
 
+### Step 4: Delete the Previous Log
+
+```python 
+# Delete MY_DATA.HTM if present
+log.delete()
+```
 
 ---
 
-### Step 4: Label the Column on the `MY_DATA.HTM` File
+### Step 5: Enable `mirroring` in Serial
+
+This is not compulsory, but seeing the data being recorded shows that the code is working.
+
+```python
+# Enable mirroring in serial
+log.set_mirroring(True)
+```
+
+---
+
+### Step 6: Label the Column on the `MY_DATA.HTM` File
 
 Set the name of the row labels on the log file.
 
 ```python
+# Label the light column on the MY_DATA.HTM file
 log.set_labels('light')
 ```
 
 ---
 
-### Step 5: Log the Data
+### Step 7: Create an Instance of the Light Object
+
+This is just good practice.
+
+```python
+# Create an instance of the Light class
+light = Light(pin1)
+```
+
+
+
+---
+
+### Step 8: Log the Data
 
 Log the data every millisecond `sleep(1)` in a `while` loop with the `log.add()`  method. 
 
 ```python
+# Code in a 'while True:' loop repeats forever
 while True:
-    log.add({'light': LIGHT(pin1).get_light()})
-    sleep(1)
+    # Add a row to MY_DATA.HTM 
+    log.add({
+        'light': light.get_light()
+    })
+    # Repeat every 10 milliseconds
+    sleep(10)
 ```
 
 Here is the complete code for the Octopus Light Sensor.
 
 ```python
+# Imports go at the top
 from microbit import *
 import log
-from octopus import LIGHT
+from octopus import Light
 
+# Delete MY_DATA.HTM if present
+log.delete()
+
+# Enable mirroring in serial
+log.set_mirroring(True)
+
+# Label the light column on the MY_DATA.HTM file
 log.set_labels('light')
 
+# Create an instance of the Light class
+light = Light(pin1)
+
+# Code in a 'while True:' loop repeats forever
 while True:
-    log.add({'light': LIGHT(pin1).get_light()})
-    sleep(1)
+    # Add a row to MY_DATA.HTM 
+    log.add({
+        'light': light.get_light()
+    })
+    # Repeat every 10 milliseconds
+    sleep(10)
+
 ```
 > [!NOTE]
 >
@@ -130,14 +184,14 @@ The code runs for approximately 43 seconds and logs over 7500 logs before it fil
 
 ## Other ELECFREAKS Octopus Sensors
 
-Here are the sensors that are available to tinker with in this presentation. The code will be the same above with sensor specific code. For example:
+Here are the sensors that are available to tinker with in this presentation. The code will be the same as above with a sensor-specific code. For example:
 
 If the Octopus Water Level sensor is chosen use `from octopus import WATER_LEVEL` instead of `from octopus import LIGHT`. The method will be `WATER_LEVEL(pin1).get_water_level` instead of `LIGHT(pin1).get_light()`
 
 |                                                              | Octopus Sensor         | `from octopus import ...` | Method for the Sensor                                        |
 | ------------------------------------------------------------ | ---------------------- | ------------------------- | ------------------------------------------------------------ |
 | <img src="assets/octopus-bme280-sensor.png" alt="octopus-BME280-sensor" style="zoom:25%;" /> | BME280 Pressure Sensor | `BME20`                   | `BME280(pin1).get_temperature()`<br />`BME280(pin1).get_humidity()`<br />`BME280(pin1).get_altitude()`<br />`BME280(pin1).get_pressure()` |
-| <img src="assets/octopus-light-sensor.png" alt="octopus-light-sensor" style="zoom:25%;" /> | Light Sensor           | `LIGHT`                   | `LIGHT(pin1).get_light()`                                    |
+| <img src="assets/octopus-photocell-sensor.png" alt="octopus-photocell-sensor" style="zoom:25%;" /> | Photocell Sensor       | `LIGHT`                   | `LIGHT(pin1).get_light()`                                    |
 | <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor           | `NOISE`                   | `NOISE(pin1).get_noise()`                                    |
 | <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor   | `SOIL_MOISTURE`           | `SOIL_MOISTURE(pin1).get_soil_moisture()`                    |
 | <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor              | `UV`                      | `UV(pin1).get_uv_index()`                                    |
