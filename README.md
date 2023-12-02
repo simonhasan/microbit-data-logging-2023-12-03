@@ -83,7 +83,9 @@ Plotting Sensor Data with Excel
 
 Plotting Sensor Data with Google Sheets
 
-[Plotting Sensor Data with `pandas` and `matplotlib` (Python)](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/python_plotting.ipynb)
+[Plotting Sensor Data with `pandas` and `matplotlib` (Python)](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/python_plotting/python_plotting.ipynb)
+
+
 
 
 
