@@ -1,10 +1,11 @@
 # Import the accelerometer data and plot it
 # Importing the required libraries
-import pandas as pd
-import matplotlib.pyplot as plt
+import pandas as pd # pandas for reading the CSV file
+import matplotlib.pyplot as plt # matplotlib for plotting
 
 # Read the data from the CSV file
-accelerometer_df = pd.read_csv('data/accelerometer.csv', index_col=0)
+accelerometer_df = pd.read_csv('data/accelerometer.csv', # read the CSV file as a DataFrame
+                               index_col=0) # index_col=0 to use the first column as the index
 
 # Plot the data with subplots
 fig, axes = plt.subplots(nrows=3) # 3 rows of plots
