@@ -1,5 +1,7 @@
 # Octopus Sensor Modules with MicroPython
 
+[TOC]
+
 The following example uses the [ELECFREAKS Octopus Photocell Sensor](https://www.elecfreaks.com/octopus-water-level-sensor.html) displayed below:
 
 ![octopus-light-sensor](assets/octopus-photocell-sensor.png)
@@ -112,11 +114,11 @@ log.set_labels('analog_val')
 
 ### Step 7: Create an Instance of the Potentiometer Object
 
-This is just good practice.
+This is just good practice. `pot` is a common name for a potentiometer variable, but this does not work well with students.
 
 ```python
 # Create an instance of the Light class
-potentiometer = Potentiometer(pin1)
+p = Potentiometer(pin1)
 ```
 
 
@@ -132,7 +134,7 @@ Log the data every millisecond `sleep(1)` in a `while` loop with the `log.add()`
 while True:
     # Add a row to MY_DATA.HTM 
     log.add({
-        'analog_val': potentiometer.get_analog()
+        'analog_val': p.get_analog()
     })
     # Repeat every 10 milliseconds
     sleep(10)
