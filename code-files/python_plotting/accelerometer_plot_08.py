@@ -8,17 +8,23 @@ accelerometer_df = pd.read_csv('data/accelerometer.csv', # Read the CSV file as 
                                index_col=0) # Use the first column as the index
 
 # Plot the data with subplots
+# fig is the figure object
+# ax1, ax2, and ax3 are the axes objects
 fig, (ax1, ax2, ax3) = plt.subplots(1, 3, # 1 row of plots with 3 columns
                                     sharey=True) # sharey=True for a shared y-axis
+
+# ax1 is the first plot on the left
 ax1.plot(accelerometer_df['x']) # [x] in square brackets to slice the x column
 ax1.set_title('x') # Add a title to the first plot
 ax1.set_xlabel('Time (ms)') # Add a label to the x-axis
 
+# ax2 is the second plot in the middle
 ax2.plot(accelerometer_df['y'], # [y] in square brackets to slice the y column
          color='red') # y in red
 ax2.set_title('y') # Add a title to the second plot
 ax2.set_xlabel('Time (ms)') # Add a label to the x-axis
 
+# ax3 is the third plot on the right
 ax3.plot(accelerometer_df['z'], # [z] in square brackets to slice the z column
          color='green') # z in green
 ax3.set_title('z') # Add a title to the third plot
