@@ -74,7 +74,7 @@ Import the necessary modules with `import log` and `from octopus import LIGHT` a
 ```python
 from micro:bit import *
 import log
-from octopus import LIGHT
+from octopus import Potentiometer
 ```
 
 ---
@@ -105,18 +105,18 @@ Set the name of the row labels on the log file.
 
 ```python
 # Label the light column on the MY_DATA.HTM file
-log.set_labels('light')
+log.set_labels('analog_val')
 ```
 
 ---
 
-### Step 7: Create an Instance of the Light Object
+### Step 7: Create an Instance of the Potentiometer Object
 
 This is just good practice.
 
 ```python
 # Create an instance of the Light class
-light = Light(pin1)
+potentiometer = Potentiometer(pin1)
 ```
 
 
@@ -132,19 +132,19 @@ Log the data every millisecond `sleep(1)` in a `while` loop with the `log.add()`
 while True:
     # Add a row to MY_DATA.HTM 
     log.add({
-        'light': light.get_light()
+        'analog_val': potentiometer.get_analog()
     })
     # Repeat every 10 milliseconds
     sleep(10)
 ```
 
-Here is the complete code for the Octopus Light Sensor.
+Here is the complete code for the Octopus Potentiometer.
 
 ```python
 # Imports go at the top
 from microbit import *
 import log
-from octopus import Light
+from octopus import Potentiometer
 
 # Delete MY_DATA.HTM if present
 log.delete()
@@ -153,17 +153,18 @@ log.delete()
 log.set_mirroring(True)
 
 # Label the light column on the MY_DATA.HTM file
-log.set_labels('light')
+log.set_labels('analog_val')
 
-# Create an instance of the Light class
-light = Light(pin1)
+# Create an instance of the Potentiometer class 
+p = Potentiometer(pin1)
 
 # Code in a 'while True:' loop repeats forever
 while True:
     # Add a row to MY_DATA.HTM 
     log.add({
-        'light': light.get_light()
+        'analog_val': p.get_analog()
     })
+    
     # Repeat every 10 milliseconds
     sleep(10)
 

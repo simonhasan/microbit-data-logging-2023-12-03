@@ -13,13 +13,13 @@ log.set_mirroring(True)
 log.set_labels('analog_val')
 
 # Create an instance of the Potentiometer class 
-potentiometer = Potentiometer(pin1)
+p = Potentiometer(pin1)
 
 # Code in a 'while True:' loop repeats forever
 while True:
     # Add a row to MY_DATA.HTM 
     log.add({
-        'analog_val': potentiometer.get_analog()
+        'analog_val': p.get_analog()
     })
     
     # Repeat every 10 milliseconds
