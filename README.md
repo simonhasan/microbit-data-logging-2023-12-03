@@ -50,7 +50,7 @@ Data logging with the BBC micro:bit.
 
 ## Part 1: micro:bit Data Logging with Built-In Sensors
 
-Built-In Sensor Data Logging with MakeCode
+On-Board Sensor Data Logging with MakeCode
 
 Built-In Sensor Data Logging with MicroPython
 

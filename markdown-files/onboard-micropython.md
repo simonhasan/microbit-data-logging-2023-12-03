@@ -1,4 +1,4 @@
-# On-Board Sensors with MicroPython
+# On-Board Sensor Data Logging with MicroPython
 
 This example uses the onboard sensors displayed below on the micro:bit:
 
@@ -94,9 +94,7 @@ while True:
 ## Code for Other On-Board Sensors
 
 
-
-
-Change the labels in `log.set_labels()`. Make sure the names are strings in `' '` or `" "`. If there are more thane one label, seperate them with commas.
+Change the labels in `log.set_labels()`. Make sure the names are strings in `' '` or `" "`. If there is more than one label, separate them with commas.
 
 `accelerometer.get_x()`: Get acceleration (x).
 `accelerometer.get_y()`: Get acceleration (y).
