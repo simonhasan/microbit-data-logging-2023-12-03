@@ -359,25 +359,7 @@ class Noise:
             sound = ((sound - 231) * (120 - 90)) / (1023 - 231) + 90
         return sound
 
-# Octopus Soil Moisture Sensor   
-class SoilMoisture(object):
-    """Soil moisture sensor
 
-    Args:
-        pin
-    """
-    def __init__(self, pin):
-        self.__pin = pin
-
-    def get_soil_moisture(self):
-        """Read the soil moisture percentage
-        
-        Returns:
-            soil moisture percentage
-        """
-        __value = self.__pin.read_analog()
-        value = ((__value - 0) * (100 - 0)) / (1023 - 0) + 0
-        return 100-value
 
 # Octopus TMP36 Temperature Sensor
 class TMP36:
@@ -433,8 +415,8 @@ class Potentiometer(object):
     Returns:
         analog reading
     """
-    def __init__(self, pin_d):
-        self.__pin = pin_d
+    def __init__(self, pin):
+        self.__pin = pin
 
     def get_analog(self):
         """Get analog reading
@@ -443,6 +425,35 @@ class Potentiometer(object):
             analog reading 0-1023
         """
         return self.__pin.read_analog()
+
+# Octopus Soil Moisture Sensor   
+class SoilMoisture(object):
+    """Soil moisture sensor
+
+    Args:
+        pin
+    """
+    def __init__(self, pin):
+        self.__pin = pin
+    
+    def get_soil_moisture(self):
+        """Get analog reading
+
+        Returns:
+            analog reading 0-1023
+        """
+        return self.__pin.read_analog()
+
+# This code returns the opposite of what it should
+#    def get_soil_moisture(self):
+#        """Read the soil moisture percentage
+#        
+#        Returns:
+#            soil moisture percentage
+#        """
+#        __value = self.__pin.read_analog()
+#        value = ((__value - 0) * (100 - 0)) / (1023 - 0) + 0
+#        return 100-value
     
 # Octopus Analog UV Sensor    
 class UV(object):
