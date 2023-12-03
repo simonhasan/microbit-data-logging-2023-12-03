@@ -2,7 +2,7 @@
 
 This example uses the onboard sensors displayed below on the micro:bit:
 
-![microbit-labeled](/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/microbit-labeled.png)
+![microbit-labeled](assets/microbit-labeled.png)
 
 ---
 
