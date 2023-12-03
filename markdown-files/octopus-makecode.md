@@ -1,10 +1,8 @@
 # Octopus Sensor Modules with MakeCode
 
-The following example uses the [ELECFREAKS Octopus Water Level Sensor](https://www.elecfreaks.com/octopus-water-level-sensor.html) displayed below:
+The example uses the ELECFREAKS Octopus Photocell displayed below:
 
-![octopus-waterlevel-sensor](assets/octopus-light-sensor.png)
-
-Documentation for this sensor can be found [here](https://wiki.elecfreaks.com/en/microbit/sensor/octopus-sensors/sensor/octopus_ef04094).
+![octopus-waterlevel-sensor](assets/octopus-photocell-sensor.png)
 
 ---
 ## Example: Octopus Potentiometer

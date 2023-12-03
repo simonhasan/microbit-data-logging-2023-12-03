@@ -71,7 +71,7 @@ The file now works with the micro:bit Python Editor code completion feature.
 
 ### Step 3: Import the Modules
 
-Import the necessary modules with `import log` and `from octopus import LIGHT` as demonstrated below:
+Import the necessary modules that are not preloaded with `import log` and `from octopus import Potentiometer` as demonstrated below:
 
 ```python
 # Imports go at the top
@@ -119,7 +119,7 @@ p = Potentiometer(pin1)
 
 ### Step 7: Log the Data
 
-Log the data every 10 millisecond `sleep(1o)` in a `while` loop while with the `log.add()`  method. 
+Log the data every 10 millisecond `sleep(10)` in a `while` loop while with the `log.add()`  method. 
 
 ```python
 # Code in a 'while True:' loop repeats forever
