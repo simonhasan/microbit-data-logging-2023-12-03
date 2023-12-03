@@ -3,3 +3,7 @@
 This example uses the onboard sensors displayed below on the micro:bit:
 
 ![microbit-labeled](assets/microbit-labeled.png)
+
+## Example: Accelerometer
+
+### Step 1:  

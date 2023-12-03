@@ -14,7 +14,7 @@ fig, (ax1, ax2, ax3) = plt.subplots(1, 3, # 1 row of plots with 3 columns
                                     sharey=True) # sharey=True for a shared y-axis
 
 # ax1 is the first plot on the left
-ax1.plot(accelerometer_df['x']) # [x] in square brackets to slice the x column
+ax1.plot(accelerometer_df['x']) # [x] in square brackets to slice the x column, x in blue (default)
 ax1.set_title('x') # Add a title to the first plot
 ax1.set_xlabel('Time (ms)') # Add a label to the x-axis
 

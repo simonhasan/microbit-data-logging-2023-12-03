@@ -103,6 +103,6 @@ Change the labels in `log.set_labels()`. Make sure the names are strings in `' '
 - `compass.get_x()`: Get magnetic field strength (x).
 - `compass.get_y()`: Get magnetic field strength (y).
 - `compass.get_z()`: Get magnetic field strength (z).
-- `microphone.sound_level()`
+- `microphone.sound_level()`: Get sound level.
 - `read_light_level()`: Get light level.
 - `temperature()`: Get temperature.
