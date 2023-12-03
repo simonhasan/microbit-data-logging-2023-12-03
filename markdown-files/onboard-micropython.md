@@ -96,13 +96,13 @@ while True:
 
 Change the labels in `log.set_labels()`. Make sure the names are strings in `' '` or `" "`. If there is more than one label, separate them with commas.
 
-`accelerometer.get_x()`: Get acceleration (x).
-`accelerometer.get_y()`: Get acceleration (y).
-`accelerometer.get_y()`: Get acceleration (z).
-`compass.get_field_strength()` : Get magnetic field strength (overall).
-`compass.get_x()`: Get magnetic field strength (x).
-`compass.get_y()`: Get magnetic field strength (y).
-`compass.get_z()`: Get magnetic field strength (z).
-`microphone.sound_level()`
-`read_light_level()`: Get light level.
-`temperature()`: Get temperature.
+- `accelerometer.get_x()`: Get acceleration (x).
+- `accelerometer.get_y()`: Get acceleration (y).
+- `accelerometer.get_y()`: Get acceleration (z).
+- `compass.get_field_strength()` : Get magnetic field strength (overall).
+- `compass.get_x()`: Get magnetic field strength (x).
+- `compass.get_y()`: Get magnetic field strength (y).
+- `compass.get_z()`: Get magnetic field strength (z).
+- `microphone.sound_level()`
+- `read_light_level()`: Get light level.
+- `temperature()`: Get temperature.
