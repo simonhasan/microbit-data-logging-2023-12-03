@@ -17,12 +17,13 @@ temp = TMP36(pin1)
 
 # Code in a 'while True:' loop repeats forever
 while True:
-    # If button A is pressed
+    # If button A is pressed log the temperature data
     if button_a.is_pressed():
         # Add a row to MY_DATA.HTM
         log.add({
             'temperature': temp.get_temperature()
         })
+    # If button B is pressed delete MY_DATA.HTM
     if button_b.is_pressed():
         # Delete MY_DATA.HTM
         log.delete()

@@ -61,7 +61,7 @@ This presentation will use micro:bit sensor modules. ADD MORE HERE...
 
 ### General-Purpose Input/Output (GPIO)
 
-  
+micro:bit GPIO  
 
 ### Octopus Data Logging with MakeCode
 
@@ -91,9 +91,7 @@ Plot sensor data using Python in the Python Plotting Playground Notebook. Click 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/simonhasan/microbit-data-logging-2023-12-03/HEAD?labpath=code-files%2Fpython_plotting%2Fpython_plotting_playground.ipynb)
 
-
-
-
-
 ---
 ## Part 4: Internet of Things (IoT) Dashboards Demonstration
+
+TO BE ADDED LATER.

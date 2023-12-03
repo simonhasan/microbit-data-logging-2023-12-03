@@ -14,7 +14,7 @@ crash = Crash(pin1)
 
 # Code in a 'while True:' loop repeats forever
 while True:
-    # If button A is pressed
+    # If button A is pressed log the crash data
     if button_a.is_pressed():
         # Add a row to MY_DATA.HTM
         log.add({

@@ -59,21 +59,20 @@ Enter text
 
 
 
-|                                                              | Octopus Sensor                                       | MakeCode Block                                               |
-| ------------------------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------------------ |
-| <img src="assets/octopus-bme280-sensor.png" alt="octopus-bme280-sensor" style="zoom:25%;" /> | BME280 Temperature/Humidity/Pressure/Altitude Sensor | <img src="assets/octopus-bme280-sensor-makecode.png" alt="octopus-bme280-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-button.png" alt="Button" style="zoom:25%;" /> | Button                                               |                                                              |
-| <img src="assets/octopus-crash-sensor.png" alt="Crash Sensor" style="zoom:25%;" /> | Crash Sensor                                         |                                                              |
-| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-dht11.png" alt="octopus-dht11" style="zoom:25%;" /> | DHT11 Temperature and Humidity Sensor                |                                                              |
-| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-ds18b20.png" alt="octopus-ds18b20" style="zoom:25%;" /> | DS18B20 Waterproof Temperature Sensor                |                                                              |
-| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor                                         | <img src="assets/octopus-noise-sensor-makecode.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-photocell-sensor.png" alt="Photocell" style="zoom:25%;" /> | Photocell Light Sensor                               | <img src="assets/octopus-light-sensor-makecode.png" alt="octopus-light-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-pir-motion-sensor.png" alt="PIR Motion Sensor" style="zoom:25%;" /> | PIR Motion Sensor                                    |                                                              |
-| <img src="assets/octopus-analog-rotation-brick.png" alt="Potentiometer" style="zoom:25%;" /> | Potentiometer                                        |                                                              |
-| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor                                 | <img src="assets/octopus-soil-moisture-sensor-makecode.png" alt="octopus-soil-moisture-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | Ultrasonic Distance Sensor                           |                                                              |
-| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor                                            | <img src="assets/octopus-uv-sensor-makecode.png" alt="octopus-uv-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor                                   | <img src="assets/octopus-water-level-sensor-makecode.png" alt="octopus-water-level-sensor-makecode" style="zoom:60%;" /> |
+|                                                              | Octopus Sensor                        | MakeCode Block                                               |
+| ------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------ |
+| <img src="assets/octopus-button.png" alt="Button" style="zoom:25%;" /> | Button                                |                                                              |
+| <img src="assets/octopus-crash-sensor.png" alt="Crash Sensor" style="zoom:25%;" /> | Crash Sensor                          |                                                              |
+| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-dht11.png" alt="octopus-dht11" style="zoom:25%;" /> | DHT11 Temperature and Humidity Sensor |                                                              |
+| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-ds18b20.png" alt="octopus-ds18b20" style="zoom:25%;" /> | DS18B20 Waterproof Temperature Sensor |                                                              |
+| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor                          | <img src="assets/octopus-noise-sensor-makecode.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-photocell-sensor.png" alt="Photocell" style="zoom:25%;" /> | Photocell Light Sensor                | <img src="assets/octopus-light-sensor-makecode.png" alt="octopus-light-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-pir-motion-sensor.png" alt="PIR Motion Sensor" style="zoom:25%;" /> | PIR Motion Sensor                     |                                                              |
+| <img src="assets/octopus-analog-rotation-brick.png" alt="Potentiometer" style="zoom:25%;" /> | Potentiometer                         |                                                              |
+| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor                  | <img src="assets/octopus-soil-moisture-sensor-makecode.png" alt="octopus-soil-moisture-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | Ultrasonic Distance Sensor            |                                                              |
+| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor                             | <img src="assets/octopus-uv-sensor-makecode.png" alt="octopus-uv-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor                    | <img src="assets/octopus-water-level-sensor-makecode.png" alt="octopus-water-level-sensor-makecode" style="zoom:60%;" /> |
 
 ---
 
