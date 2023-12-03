@@ -210,31 +210,32 @@ The code runs for approximately 43 seconds and logs over 7500 logs before it fil
 
 ## Other ELECFREAKS Octopus Sensors
 
-Here are the sensors that are available to tinker with in this presentation. The code will be the same as above with a sensor-specific code. For example:
+Here are the sensors that are available to tinker with in this presentation. The code will be the same as above with a sensor-specific code.  For example:
 
 If the Octopus Water Level sensor is chosen use:
 
 - `from octopus import WaterLevel` instead of `from octopus import Potentiometer`. 
 -  `wl = WaterLevel(pin1)` instead of `p = LIGHT(pin1)` **OR**
-- 
+
+Links to the `.hex` files are included in the **Octopus Sensor** column:
 
 |                                                              | Octopus Sensor                                               | `from octopus import ...` | Method for the Sensor                                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- | ------------------------------------------------------------ |
-| <img src="assets/octopus-button.png" alt="Button" style="zoom:25%;" /> | [Button](https://raw.githubusercontent.com/simonhasan/microbit-data-logging-2023-12-03/main/code-files/micropython/micropython_button.hex) | `Button`                  | `button = Button(pin1)`<br /><br />`button.get_presses()`    |
-| <img src="assets/octopus-crash-sensor.png" alt="Crash Sensor" style="zoom:25%;" /> | Crash Sensor                                                 | `Crash`                   | `crash = Crash(pin1)`<br /><br />`crash.get_presses()`       |
-| <img src="assets/octopus-noise-sensor.png" alt="Noise Sensor" style="zoom:25%;" /> | Noise Sensor                                                 | `Noise`                   | `noise = Noise(pin1)`<br /><br />`noise.get_noise()`         |
-| <img src="assets/octopus-photocell-sensor.png" alt="Photocell" style="zoom:25%;" /> | Photocell Light Sensor                                       | `Light`                   | `light = Light(pin1)`<br /><br />`light.get_light()`         |
-| <img src="assets/octopus-pir-motion-sensor.png" alt="PIR Motion Sensor" style="zoom:25%;" /> | PIR Motion Sensor                                            | `PIR`                     | `pir = PIR(pin1)`<br /><br />`pir.get_motion()`              |
-| <img src="assets/octopus-analog-rotation-brick.png" alt="Potentiometer" style="zoom:25%;" /> | Potentiometer                                                | `Potentiometer`           | `p = Potentiometer(pin1)`<br /><br />`p.get_analog()`        |
-| <img src="assets/octopus-soil-moisture-sensor.png" alt="Soil Moisture Sensor" style="zoom:25%;" /> | Soil Moisture Sensor                                         | `SoilMoisture`            | `sm = SoilMoisture(pin1)`<br /><br />`sm.get_soil_moisture()` |
-| <img src="assets/octopus-tmp36.png" alt="TMP36" style="zoom:25%;" /> | TMP36 Temperature Sensor                                     | `TMP36`                   | `temp = TMP36(pin1)`<br /><br />`temp.get_temperature()`     |
+| <img src="assets/octopus-button.png" alt="Button" style="zoom:25%;" /> | [Button](code-files/micropython/micropython_button.hex)      | `Button`                  | `button = Button(pin1)`<br /><br />`button.get_presses()`    |
+| <img src="assets/octopus-crash-sensor.png" alt="Crash Sensor" style="zoom:25%;" /> | [Crash Sensor](code-files/micropython/micropython_crash.hex) | `Crash`                   | `crash = Crash(pin1)`<br /><br />`crash.get_presses()`       |
+| <img src="assets/octopus-noise-sensor.png" alt="Noise Sensor" style="zoom:25%;" /> | [Noise Sensor](code-files/micropython/micropython_noise.hex) | `Noise`                   | `noise = Noise(pin1)`<br /><br />`noise.get_noise()`         |
+| <img src="assets/octopus-photocell-sensor.png" alt="Photocell" style="zoom:25%;" /> | [Photocell Light Sensor](code-files/micropython/micropython_photocell.hex) | `Light`                   | `light = Light(pin1)`<br /><br />`light.get_light()`         |
+| <img src="assets/octopus-pir-motion-sensor.png" alt="PIR Motion Sensor" style="zoom:25%;" /> | [PIR Motion Sensor](code-files/micropython/micropython_pir.hex) | `PIR`                     | `pir = PIR(pin1)`<br /><br />`pir.get_motion()`              |
+| <img src="assets/octopus-analog-rotation-brick.png" alt="Potentiometer" style="zoom:25%;" /> | [Potentiometer](code-files/micropython/micropython_potentiometer.hex) | `Potentiometer`           | `p = Potentiometer(pin1)`<br /><br />`p.get_analog()`        |
+| <img src="assets/octopus-soil-moisture-sensor.png" alt="Soil Moisture Sensor" style="zoom:25%;" /> | [Soil Moisture Sensor](code-files/micropython/micropython_soil_moisture.hex) | `SoilMoisture`            | `sm = SoilMoisture(pin1)`<br /><br />`sm.get_soil_moisture()` |
+| <img src="assets/octopus-tmp36.png" alt="TMP36" style="zoom:25%;" /> | [TMP36 Temperature Sensor](code-files/micropython/micropython_tmp36.hex) | `TMP36`                   | `temp = TMP36(pin1)`<br /><br />`temp.get_temperature()`     |
 | <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | Ultrasonic Distance Sensor                                   | `Distance`                | `dist = Distance(pin1)`<br /><br />`dist.get_distance()`     |
-| <img src="assets/octopus-uv-sensor.png" alt="UV Sensor" style="zoom:25%;" /> | UV Sensor                                                    | `UV`                      | `uv = UV(pin1)`<br /><br />`uv.get_uv()`                     |
-| <img src="assets/octopus-water-level-sensor.png" alt="Water Level Sensor" style="zoom:25%;" /> | Water Level Sensor                                           | `WaterLevel`              | `wl = WaterLevel(pin1)`<br /><br />`wl.get_water_level()`    |
+| <img src="assets/octopus-uv-sensor.png" alt="UV Sensor" style="zoom:25%;" /> | [UV Sensor](code-files/micropython/micropython_uv.hex)       | `UV`                      | `uv = UV(pin1)`<br /><br />`uv.get_uv()`                     |
+| <img src="assets/octopus-water-level-sensor.png" alt="Water Level Sensor" style="zoom:25%;" /> | [Water Level Sensor](code-files/micropython/micropython_water_level.hex) | `WaterLevel`              | `wl = WaterLevel(pin1)`<br /><br />`wl.get_water_level()`    |
 
 ---
 
-## Data Logging MakeCode Files
+## Data Logging Python Files
 
 ### Full Code Files
 
