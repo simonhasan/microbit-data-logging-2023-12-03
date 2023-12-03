@@ -24,7 +24,7 @@ The `log` module is a built-in module. The `octopus` module is an external file 
 
 #### Downloading `octopus.py`
 
-First, download the octopus module (`octopus.py`) in the GitHub repository [here](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/octopus.py). This is a collection of several official ELECFREAKS modules combined in one file for convenience.
+First, download the octopus module (`octopus.py`) in the GitHub repository [here](code-files/micropython/octopus.py). This is a collection of several official ELECFREAKS modules combined in one file for convenience.
 
 Click on the ![github-download](assets/github-download.png) icon to download the file.
 
@@ -74,23 +74,15 @@ The file now works with the micro:bit Python Editor code completion feature.
 Import the necessary modules with `import log` and `from octopus import LIGHT` as demonstrated below:
 
 ```python
-from micro:bit import *
+# Imports go at the top
+from microbit import *
 import log
 from octopus import Potentiometer
 ```
 
 ---
 
-### Step 4: Delete the Previous Log
-
-```python 
-# Delete MY_DATA.HTM if present
-log.delete()
-```
-
----
-
-### Step 5: Enable `mirroring` in Serial
+### Step 4: Enable `mirroring` in Serial
 
 This is not compulsory, but seeing the data being recorded shows that the code is working.
 
@@ -101,21 +93,23 @@ log.set_mirroring(True)
 
 ---
 
-### Step 6: Label the Column on the `MY_DATA.HTM` File
+### Step 5: Label the Column on the `MY_DATA.HTM` File
 
 Set the name of the row labels on the log file.
 
 ```python
+# Label the light column on the MY_DATA.HTM file
 log.set_labels('analog_val')
 ```
 
 ---
 
-### Step 7: Create an Instance of the Potentiometer Object
+### Step 6: Create an Instance of the Potentiometer Object
 
 This is just good practice. `pot` is a common name for a potentiometer variable, but this does not work well with students.
 
 ```python
+# Create an instance of the Potentiometer class 
 p = Potentiometer(pin1)
 ```
 
@@ -123,15 +117,25 @@ p = Potentiometer(pin1)
 
 ---
 
-### Step 8: Log the Data
+### Step 7: Log the Data
 
-Log the data every millisecond `sleep(1)` in a `while` loop with the `log.add()`  method. 
+Log the data every 10 millisecond `sleep(1o)` in a `while` loop while with the `log.add()`  method. 
 
 ```python
+# Code in a 'while True:' loop repeats forever
 while True:
-    log.add({
-        'analog_val': p.get_analog()
-    })
+    # If button A is pressed log the potentiometer data
+    if button_a.is_pressed():
+        # Add a row to MY_DATA.HTM
+        log.add({
+            'analog_val': p.get_analog()
+        })
+    # If button B is pressed delete MY_DATA.HTM    
+    if button_b.is_pressed():
+        # Delete MY_DATA.HTM
+        log.delete()
+
+    # Repeat every 10 milliseconds
     sleep(10)
 ```
 
@@ -142,9 +146,6 @@ Here is the complete commented code for the Octopus Potentiometer.
 from microbit import *
 import log
 from octopus import Potentiometer
-
-# Delete MY_DATA.HTM if present
-log.delete()
 
 # Enable mirroring in serial
 log.set_mirroring(True)
@@ -157,55 +158,21 @@ p = Potentiometer(pin1)
 
 # Code in a 'while True:' loop repeats forever
 while True:
-    # Add a row to MY_DATA.HTM 
-    log.add({
-        'analog_val': p.get_analog()
-    })
-    
+    # If button A is pressed log the potentiometer data
+    if button_a.is_pressed():
+        # Add a row to MY_DATA.HTM
+        log.add({
+            'analog_val': p.get_analog()
+        })
+    # If button B is pressed delete MY_DATA.HTM    
+    if button_b.is_pressed():
+        # Delete MY_DATA.HTM
+        log.delete()
+
     # Repeat every 10 milliseconds
     sleep(10)
-
-```
-It is also possible to write the code without creating an instance. as displayed below:
-
-```python
-# Imports go at the top
-from microbit import *
-import log
-from octopus import Potentiometer
-
-# Delete MY_DATA.HTM if present
-log.delete()
-
-# Enable mirroring in serial
-log.set_mirroring(True)
-
-# Label the light column on the MY_DATA.HTM file
-log.set_labels('analog_val')
-
-# Code in a 'while True:' loop repeats forever
-while True:
-    # Add a row to MY_DATA.HTM 
-    log.add({
-        'analog_val': Potentiometer(Pin1).get_analog() # OBJECT INSTANTIATED HERE
-    })
     
-    # Repeat every 10 milliseconds
-    sleep(10)
 ```
-
-> [!NOTE]
->
-> This code has no interrupts or exception handling. These topics are beyond the scope of the presentation. This code logs data until the memory is full and returns `OSEor`:
-
-```
-Traceback (most recent call last):
-  File "main.py", line 9, in <module>
-OSError: [Errno 28] ENOSPC
-```
-
-The code runs for approximately 43 seconds and logs over 7500 logs before it fills the memory on the micro:bit.
-
 ---
 
 ## Other ELECFREAKS Octopus Sensors
@@ -229,30 +196,7 @@ Links to the `.hex` files are included in the **Octopus Sensor** column:
 | <img src="assets/octopus-analog-rotation-brick.png" alt="Potentiometer" style="zoom:25%;" /> | [Potentiometer](code-files/micropython/micropython_potentiometer.hex) | `Potentiometer`           | `p = Potentiometer(pin1)`<br /><br />`p.get_analog()`        |
 | <img src="assets/octopus-soil-moisture-sensor.png" alt="Soil Moisture Sensor" style="zoom:25%;" /> | [Soil Moisture Sensor](code-files/micropython/micropython_soil_moisture.hex) | `SoilMoisture`            | `sm = SoilMoisture(pin1)`<br /><br />`sm.get_soil_moisture()` |
 | <img src="assets/octopus-tmp36.png" alt="TMP36" style="zoom:25%;" /> | [TMP36 Temperature Sensor](code-files/micropython/micropython_tmp36.hex) | `TMP36`                   | `temp = TMP36(pin1)`<br /><br />`temp.get_temperature()`     |
-| <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | Ultrasonic Distance Sensor                                   | `Distance`                | `dist = Distance(pin1)`<br /><br />`dist.get_distance()`     |
+| <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | [Ultrasonic Distance Sensor](code-files/micropython/micropython_distance.hex) | `Distance`                | `dist = Distance(pin1)`<br /><br />`dist.get_distance()`     |
 | <img src="assets/octopus-uv-sensor.png" alt="UV Sensor" style="zoom:25%;" /> | [UV Sensor](code-files/micropython/micropython_uv.hex)       | `UV`                      | `uv = UV(pin1)`<br /><br />`uv.get_uv()`                     |
 | <img src="assets/octopus-water-level-sensor.png" alt="Water Level Sensor" style="zoom:25%;" /> | [Water Level Sensor](code-files/micropython/micropython_water_level.hex) | `WaterLevel`              | `wl = WaterLevel(pin1)`<br /><br />`wl.get_water_level()`    |
 
----
-
-## Data Logging Python Files
-
-### Full Code Files
-
-BME280 Temperature/Humidity/Pressure/Altitude Sensor
-
-Noise Sensor
-
-Photocell Light Sensor
-
-PIR Motion Sensor
-
-Potentiometer
-
-Soil Moisture Sensor
-
-TMP36 Temperature Sensor
-
-UV Sensor
-
-Water Level Sensor
