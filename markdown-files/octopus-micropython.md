@@ -93,7 +93,7 @@ log.set_mirroring(True)
 
 ---
 
-### Step 5: Label the Column on the `MY_DATA.HTM` File
+### Step 5: Label the Columns on the `MY_DATA.HTM` File
 
 Set the name of the row labels on the log file.
 

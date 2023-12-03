@@ -5,8 +5,8 @@ The example uses the ELECFREAKS Octopus Photocell displayed below:
 ![octopus-waterlevel-sensor](assets/octopus-photocell-sensor.png)
 
 ---
-## Example: Octopus Potentiometer
-### Step 1: Connect the Potentiometer to the Breakout Board
+## Example: Octopus Noise Sensor
+### Step 1: Connect the Noise to the Breakout Board
 
 The breakout boards provided for this presentation may differ from the one presented below. The breakout boards from DFRobot have a green pin instead of a yellow pin for the GPIO. Nevertheless, this demonstration's functionality is the same, as the order is still SVG.
 
@@ -37,47 +37,106 @@ The datalogger blocks are now available in the Blocks Toolbox.
 
 ![Datalogger extension](assets/makecode-extensions-03.png)
 
+The Octopus blocks are now available in the Blocks Toolbox.
+
 ---
 
-### Step 3: Label the Column on the `MY_DATA.HTM` File
+### Step 3: Mirror Data to Serial
 
-Select the `set columns` block.
+Drag the `mirror data to serial` block from `Data Logger` into the `on start` block:
 
-![Available blocks](assets/makecode-extensions-04.png)
+![block-enable-logging-serial](assets/block-enable-logging-serial.png)
 
-Place the the `set columns` block in the `on start` block.
+---
 
-![Placing set columns block in on start block](assets/name-columns-02.png)
+### Step 4: Label the Label the Columns on the `MY_DATA.HTM` File 
 
-Enter text
+ 
 
-![Placing set columns block in on start block](assets/name-columns-03.png)
+Select the `set columns` block from `Data Logger`. Drag it under the `mirror data to serial` block:
+
+![block-enable-logging-serial](assets/block-label-columns.png)
+
+Name the column.
+
+![block-label-columns-named](assets/block-label-columns-named.png)
 
 
 
+---
 
+### Step 5: Get a Timed Loop 
+
+Get an `every <500> ms` block from `Loops` (green):
+
+![block-every-ms](assets/block-every-ms.png)
+
+---
+
+### Step 6: Get Conditional Blocks
+
+Get two `if < > then` blocks from `Logic` (teal):
+
+![block-conditionals](assets/block-conditionals.png)
+
+---
+
+### Step 7: Get the Conditions
+
+Get two `block < > is pressed` blocks from `Input` . Place them in the open space of the `if < > then` blocks. Make sure that one is `A` and one is `B`.
+
+![block-every-button](assets/block-every-button.png)
+
+
+
+---
+
+### Step 8: Add The Data Logging Block
+
+Get a `log data < >` block from `Data Logger` Place it in the `if button <A> is pressed then` block.
+
+![block-if-button-a-log-01](assets/block-if-button-a-log-01.png)
+
+Name the column the same name as in **Step 4**:
+
+![block-if-button-a-log-02](assets/block-if-button-a-log-02.png)
+
+Drag an Octopus block in as the value:
+
+![block-if-button-a-log-03](assets/block-if-button-a-log-03.png)
+
+Add a `delete log` block in the `if button <b> is pressed` block.
+
+
+
+**All done**
+
+![block-if-button-a-log-05](assets/block-if-button-a-log-05.png)
+
+Here is the full code:
+
+![block-octopus-all-code](assets/block-octopus-all-code.png)
+
+## Other ELECFREAKS Octopus Sensors
+
+Here are the sensors that are available to tinker with in this presentation. The code will be the same as above with a sensor-specific code.  For example:
 
 |                                                              | Octopus Sensor                        | MakeCode Block                                               |
 | ------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------ |
-| <img src="assets/octopus-button.png" alt="Button" style="zoom:25%;" /> | Button                                |                                                              |
-| <img src="assets/octopus-crash-sensor.png" alt="Crash Sensor" style="zoom:25%;" /> | Crash Sensor                          |                                                              |
-| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-dht11.png" alt="octopus-dht11" style="zoom:25%;" /> | DHT11 Temperature and Humidity Sensor |                                                              |
-| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-ds18b20.png" alt="octopus-ds18b20" style="zoom:25%;" /> | DS18B20 Waterproof Temperature Sensor |                                                              |
-| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor                          | <img src="assets/octopus-noise-sensor-makecode.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-photocell-sensor.png" alt="Photocell" style="zoom:25%;" /> | Photocell Light Sensor                | <img src="assets/octopus-light-sensor-makecode.png" alt="octopus-light-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-pir-motion-sensor.png" alt="PIR Motion Sensor" style="zoom:25%;" /> | PIR Motion Sensor                     |                                                              |
-| <img src="assets/octopus-analog-rotation-brick.png" alt="Potentiometer" style="zoom:25%;" /> | Potentiometer                         |                                                              |
-| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor                  | <img src="assets/octopus-soil-moisture-sensor-makecode.png" alt="octopus-soil-moisture-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | Ultrasonic Distance Sensor            |                                                              |
-| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor                             | <img src="assets/octopus-uv-sensor-makecode.png" alt="octopus-uv-sensor-makecode" style="zoom:60%;" /> |
-| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor                    | <img src="assets/octopus-water-level-sensor-makecode.png" alt="octopus-water-level-sensor-makecode" style="zoom:60%;" /> |
+| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-dht11.png" alt="octopus-dht11" style="zoom:25%;" /> | DHT11 Temperature and Humidity Sensor | <img src="assets/block-octopus-dht11.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="/Users/simon/Library/CloudStorage/OneDrive-Personal/-OneDrive-Shared/GitHub/Untitled/markdown-files/assets/octopus-ds18b20.png" alt="octopus-ds18b20" style="zoom:25%;" /> | DS18B20 Waterproof Temperature Sensor | <img src="assets/block-octopus-ds18b20.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-noise-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Noise Sensor                          | <img src="assets/block-octopus-noise.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-photocell-sensor.png" alt="Photocell" style="zoom:25%;" /> | Photocell Light Sensor                | <img src="assets/block-octopus-light.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-pir-motion-sensor.png" alt="PIR Motion Sensor" style="zoom:25%;" /> | PIR Motion Sensor                     | <img src="assets/block-octopus-pir.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-soil-moisture-sensor.png" alt="octopus-noise-sensor" style="zoom:25%;" /> | Soil Moisture Sensor                  | <img src="assets/block-octopus-soil-moisture.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-ultrasonic.png" alt="Ultrasonic Sensor" style="zoom:25%;" /> | Ultrasonic Distance Sensor            | <img src="assets/block-octopus-ultrasonic.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-uv-sensor.png" alt="octopus-uv-sensor" style="zoom:25%;" /> | UV Sensor                             | <img src="assets/block-octopus-uv.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
+| <img src="assets/octopus-water-level-sensor.png" alt="octopus-water-level-sensor" style="zoom:25%;" /> | Water Level Sensor                    | <img src="assets/block-octopus-water-level.png" alt="octopus-noise-sensor-makecode" style="zoom:60%;" /> |
 
 ---
 
 ## Data Logging MakeCode Files
 ### Full Code Files
-
-BME280 Temperature/Humidity/Pressure/Altitude Sensor
 
 [DHT11 Temperature and Humidity Sensor](https://makecode.microbit.org/S03719-79254-31365-14802)
 
@@ -85,13 +144,13 @@ BME280 Temperature/Humidity/Pressure/Altitude Sensor
 
 [Noise Sensor](https://makecode.microbit.org/S68700-11119-27920-44083)
 
-Photocell Light Sensor
+[Photocell Light Sensor](https://makecode.microbit.org/S89999-13858-88027-85367)
 
 [PIR Motion Sensor](https://makecode.microbit.org/S57511-02520-74396-99456)
 
 [Potentiometer](https://makecode.microbit.org/S77162-35748-31506-14166)
 
-Soil Moisture Sensor
+[Soil Moisture Sensor](https://makecode.microbit.org/S36205-15253-87046-65346)
 
 [Ultrasonic Distance Sensor](https://makecode.microbit.org/S88082-50114-95773-88133)
 
