@@ -85,6 +85,11 @@ Plotting Sensor Data with Google Sheets
 
 [Plotting Sensor Data with `pandas` and `matplotlib` (Python)](https://github.com/simonhasan/microbit-data-logging-2023-12-03/blob/main/code-files/python_plotting/python_plotting.ipynb)
 
+### Try Python Plotting
+
+Plot sensor data using Python in the Python Plotting Playground Notebook. Click on the button below to launch the notebook:
+ [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/simonhasan/microbit-data-logging-2023-12-03/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Fsimonhasan%2Fmicrobit-data-logging-2023-12-03%2Fblob%2Fmain%2Fcode-files%2Fpython_plotting%2Fpython_plotting_playground.ipynb)
+
 
 
 
