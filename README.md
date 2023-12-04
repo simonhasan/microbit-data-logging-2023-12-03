@@ -12,6 +12,14 @@ Data logging with the BBC micro:bit.
 
 ## Useful Links
 
+### Links to Buy ELECFREAKS Products
+
+[Octopus Sensor Modules](https://shop.elecfreaks.com/collections/octopus-sensors)
+
+[ELECFREAKS Sensor:bit (breakout board)](https://shop.elecfreaks.com/products/elecfreaks-sensor-bit-io-extension-board-for-micro-bit?_pos=10&_sid=00bfc9438&_ss=r)
+
+
+
 ### General Information
 
 [Awesome micro:bit: A curated list of resources for the BBC micro:bit](https://github.com/carlosperate/awesome-microbit)
