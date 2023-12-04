@@ -15,7 +15,7 @@ fig, (ax1, ax2, ax3) = plt.subplots(3, 1, # 3, 1 for 3 rows and 1 column of plot
 
 # Plot the x, y, and z columns
 # ax1 is the first axes object
-ax1.plot(accelerometer_df['x'], # [x] in square brackets to slice the x column
+ax1.plot(accelerometer_df['x'], # [x] in square brackets to slice the x column, x in blue (default)
          label='x') # Add a label to the first plot, x in blue (default)
 ax1.set_title('x') # Add a title to the first plot
 

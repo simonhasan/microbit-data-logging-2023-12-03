@@ -11,7 +11,7 @@ accelerometer_df = pd.read_csv('data/accelerometer.csv', # read the CSV file as 
 fig, axes = plt.subplots(nrows=3) # nrows=3 for 3 rows of plots
 
 # [x] in square brackets to slice the x column
-accelerometer_df['x'].plot(ax=axes[0]) # ax=axes[0] to plot on the first plot, x in blue 
+accelerometer_df['x'].plot(ax=axes[0]) # ax=axes[0] to plot on the first plot, x in blue (default)
 # [y] in square brackets to slice the y column
 accelerometer_df['y'].plot(ax=axes[1], # ax=axes[1] to plot on the second plot
                            color='red') # y in red
