@@ -1,8 +1,8 @@
 # Octopus Sensor Modules with MakeCode
 
-The example uses the ELECFREAKS Octopus Photocell displayed below:
+The example uses the [ELECFREAKS Octopus Noise Sensor](https://shop.elecfreaks.com/products/elecfreaks-octopus-analog-noise-sensor?_pos=1&_sid=3b206475e&_ss=r) displayed below:
 
-![octopus-waterlevel-sensor](assets/octopus-photocell-sensor.png)
+![octopus-waterlevel-sensor](assets/octopus-noise-sensor.png)
 
 ---
 ## Example: Octopus Noise Sensor
@@ -12,7 +12,7 @@ The breakout boards provided for this presentation may differ from the one prese
 
 Connect the water level sensor to pin 1 on the breakout board. The black pin (GND) should be connected to the black wire.
 
-![micro:bit with Potentiometer](assets/microbit-octopus-potentiometer.png)
+![micro:bit with Potentiometer](assets/noise-microbit.png)
 
 ---
 

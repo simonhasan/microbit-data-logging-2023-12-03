@@ -2,9 +2,9 @@
 
 ## Contents
 
-The following example uses the [ELECFREAKS Octopus Photocell Sensor](https://www.elecfreaks.com/octopus-water-level-sensor.html) displayed below:
+The example uses the [ELECFREAKS Octopus Noise Sensor](https://shop.elecfreaks.com/products/elecfreaks-octopus-analog-noise-sensor?_pos=1&_sid=3b206475e&_ss=r) displayed below:
 
-![octopus-light-sensor](assets/octopus-photocell-sensor.png)
+![octopus-light-sensor](assets/octopus-noise-sensor.png)
 
 ## Example: Octopus Potentiometer
 
@@ -14,7 +14,7 @@ The breakout boards provided for this presentation may differ from the one prese
 
 Connect the sensor to pin1 on the breakout board. The black pin (GND) should be connected to the black wire.
 
-![micro:bit with Potentiometer](assets/microbit-octopus-potentiometer.png)
+![micro:bit with Potentiometer](assets/noise-microbit.png)
 
 ---
 
@@ -24,7 +24,7 @@ The `log` module is a built-in module. The `octopus` module is an external file 
 
 #### Downloading `octopus.py`
 
-First, download the octopus module (`octopus.py`) in the GitHub repository [here](code-files/micropython/octopus.py). This is a collection of several official ELECFREAKS modules combined in one file for convenience.
+First, download the octopus module (`octopus.py`) in the GitHub repository [here](code-files/micropython/octopus.py). This is a collection of several official ELECFREAKS modules combined in one file for convenience. Other code that is not available from ELECTFREAKS has been added. This is a module that I created to make it easier for my students to use the sensors using MicroPython.
 
 Click on the ![github-download](assets/github-download.png) icon to download the file.
 
@@ -182,7 +182,7 @@ Here are the sensors that are available to tinker with in this presentation. The
 If the Octopus Water Level sensor is chosen use:
 
 - `from octopus import WaterLevel` instead of `from octopus import Potentiometer`. 
--  `wl = WaterLevel(pin1)` instead of `p = LIGHT(pin1)` **OR**
+-  `wl = WaterLevel(pin1)` instead of `p = Potentiometer(pin1)` **OR**
 
 Links to the `.hex` files are included in the **Octopus Sensor** column:
 
