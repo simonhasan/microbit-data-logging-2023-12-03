@@ -15,12 +15,7 @@ BME280_I2C_ADDR = 0x76 # For BME280
 class BME280():
     def __init__(self):
         """BME280 temperature, humidity, and barometric pressure sensor
-        
-        Returns:
-            temperature C
-            humidity 0-100% 
-            atmospheric pressure hPa 
-            altitude M according to air pressure
+        :param i2c: i2c object
         """
         self._T1 = self.__g2r(0x88)
         self._T2 = self.__short(self.__g2r(0x8A))
@@ -117,6 +112,7 @@ class BME280():
     def get_temperature(self):
         """
         Read temperature C
+        :return: temperature C
         """
         self.__get()
         return self.__T
@@ -124,6 +120,7 @@ class BME280():
     def get_humidity(self):
         """
         Read humidity %
+        :return: humidity %
         """
         self.__get()
         return self._H
@@ -131,6 +128,7 @@ class BME280():
     def get_pressure(self):
         """
         Read barometric pressure pa
+        :return: barometric pressure pa
         """
         self.__get()
         return self.__P
@@ -138,6 +136,7 @@ class BME280():
     def get_altitude(self):
         """
         Read altitude M
+        :return: altitude M
         """
         self.__get()
         return 44330 * (1 - (self.__P / 101325) ** (1 / 5.255))
@@ -145,12 +144,14 @@ class BME280():
     def set_power_on(self):
         """
         The module starts working, monitoring environmental variables in real time
+        :return: None
         """
         self.__sr(0xF4, 0x2F)
 
     def set_power_off(self):
         """
         The module sleeps, retains the last detected environment value, and is not refreshed
+        :return: None
         """
         self.__sr(0xF4, 0)
 
@@ -160,10 +161,7 @@ class DataError(Exception):
 # Octopus Button
 class Button(object):
     """Button
-
-    Args:
-        pin
-
+    :param pin:
     """
 
     def __init__(self, pin):
@@ -172,9 +170,7 @@ class Button(object):
 
     def get_presses(self) -> bool:
         """Get presses
-
-        Returns:
-            bool
+        :return: 0 or 1
         """
         if self.__pin.read_digital() == 0:
             return 1
@@ -183,9 +179,7 @@ class Button(object):
 
 class Crash(object):
     """Crash sensor
-
-    Args:
-        pin
+    :param pin:
     """
 
     def __init__(self, pin):
@@ -195,8 +189,8 @@ class Crash(object):
     def get_presses(self) -> bool:
         """Get presses
 
-        Returns:
-            bool
+        :param pin:
+        :return: 0 or 1
         """
         if self.__pin.read_digital() == 0:
             return 1
@@ -206,10 +200,8 @@ class Crash(object):
 # Octopus Sonor:bit
 class Distance(object):
     """HC_SR04 ultrasonic sensor
-
-    Args:
-        Trig pin
-        Echo pin   
+    :param pin_t: trigger pin
+    :param pin_e: echo pin
     """
 
     def __init__(self, pin_d):
@@ -218,12 +210,7 @@ class Distance(object):
 
     def get_distance(self, unit=0):
         """Read the distance
-
-        Args:
-            unit (number)
-
-        Returns:
-            distance 
+        :return: distance
         """
         self.__pin_e.read_digital()
         self.__pin_t.write_digital(1)
@@ -240,9 +227,7 @@ class Distance(object):
 # Octopus Dust Sensor
 class Dust(object):
     """Dust sensor
-
-    Args:
-        pin
+    :param pin_vo: analog pin
     """
 
     def __init__(self, pin_vo, pin_vLED):
@@ -251,9 +236,7 @@ class Dust(object):
 
     def get_dust(self):
         """Read the dust value
-
-        Returns:
-            dust value ug/m3
+        :return: dust value        
         """
         __voltage = 0
         __dust = 0
@@ -271,18 +254,14 @@ class Dust(object):
 # Octopus Light Sensor
 class Light(object):
     """Ambient light sensor
-
-    Args:
-        pin
+    :param pin: analog pin
     """
     def __init__(self, pin_d):
         self.__pin = pin_d
 
     def get_light(self):
         """Get analog light reading
-
-        Returns:
-            analog light reading 0-1023
+        :return: analog light reading 0-1023
         """
         return self.__pin.read_analog()
 # Original code is unstable
@@ -304,18 +283,14 @@ class Light(object):
 # Octopus Analog Noise Sensor                
 class Noise:
     """Sound sensor
-
-    Args:
-        pin
+    :param pin: analog pin
     """
     def __init__(self, pin):
         self.pin = pin
 
     def get_noise(self):
-        """Read the decibel level
-
-        Returns:
-            sound decibels
+        """
+        :return: sound level 0-100
         """
         level, tl, h, sum_l, sum_h = 0, 0, 0, 0, 0
         for i in range(0, 1000):
@@ -363,10 +338,16 @@ class Noise:
 
 # Octopus TMP36 Temperature Sensor
 class TMP36:
+    """TMP36 temperature sensor
+    :param pin: analog pin
+    """
     def __init__(self, pin):
         self.pin = pin
     
     def get_temperature(self):
+        """Read the temperature
+        :return: temperature C
+        """
         # Read the analog value from the pin
         value = self.pin.read_analog()
         
@@ -383,10 +364,7 @@ class TMP36:
 # Octopus PIR Sensor
 class PIR(object):
     """Octopus Passive Infrared Motion Sensor 
-
-    Args:
-        pin
-
+    :param pin: digital pin
     """
 
     def __init__(self, pin):
@@ -395,10 +373,7 @@ class PIR(object):
 
     def get_motion(self) -> bool:
         """Detect motion
-
-        Returns:
-            boolean: True, False
-
+        :return: 0 or 1
         """
         if self.__pin.read_digital():
             return 1
@@ -408,39 +383,28 @@ class PIR(object):
 # Octopus Potentiometers
 class Potentiometer(object):
     """Octopus Potentiometer
-
-    Args:
-        pin
-
-    Returns:
-        analog reading
+    :param pin: analog pin
     """
     def __init__(self, pin):
         self.__pin = pin
 
     def get_analog(self):
         """Get analog reading
-
-        Returns:
-            analog reading 0-1023
+        :return: analog reading 0-1023
         """
         return self.__pin.read_analog()
 
 # Octopus Soil Moisture Sensor   
 class SoilMoisture(object):
     """Soil moisture sensor
-
-    Args:
-        pin
+    :param pin: analog pin
     """
     def __init__(self, pin):
         self.__pin = pin
     
     def get_soil_moisture(self):
         """Get analog reading
-
-        Returns:
-            analog reading 0-1023
+        :return: analog reading 0-1023
         """
         return self.__pin.read_analog()
 
@@ -458,18 +422,14 @@ class SoilMoisture(object):
 # Octopus Analog UV Sensor    
 class UV(object):
     """Ultraviolet sensor
-    
-    Args:
-        pin
+    :param pin: analog pin
     """
     def __init__(self, pin):
         self.__pin = pin
 
     def get_uv(self):
         """Read the UV index
- 
-        Returns:
-            UV index 0-15
+        :return: UV index 0-15
         """
         __value = self.__pin.read_analog()
         value = ((__value - 0) * (15 - 0)) / (625 - 0) + 0
@@ -478,18 +438,14 @@ class UV(object):
 # Octopus Water Level Sensor    
 class WaterLevel(object):
     """Water level sensor
- 
-    Args:
-        pin
+    :param pin: analog pin
     """
     def __init__(self, pin):
         self.__pin = pin
 
     def get_water_level(self):
         """Read the water level
-
-        Returns:
-            water level percentage
+        :return: water level 0-100
         """
         __value = self.__pin.read_analog()
         value = ((__value - 0) * (100 - 0)) / (700 - 0) + 0
