@@ -1,5 +1,6 @@
 # micro:bit Data Logging
-Data logging with the BBC micro:bit. 
+
+Data logging with the BBC micro:bit presentation for University of Arizona Data Science Academy.
 
 > [!NOTE]
 > THIS REPO IS A WORK IN PROGRESS AND NOT THE FINAL REPO FOR THE PRESENTATION.
